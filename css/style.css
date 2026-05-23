@@ -1556,15 +1556,14 @@ footer .copyright {
       xl   ≤ 1280px  desktop
       2xl  ≤ 1440px  desktop ancho
 
-   ESTADO POST-FASE-1 (refactor parcial):
-   - Bug nested @media inválido (líneas ~2141) EXTRAÍDO a top-level.
-   - Bloque duplicado idéntico de #auth-section @600px MERGEADO.
-   - Doble paréntesis `@media ((max-width: 477px))` FIX a sintaxis estándar.
-   - `!important` removido (7 ocurrencias).
-   DEUDA (Fase 2):
-   - Quedan ~13 breakpoints superpuestos (360/393/477/480/600/712/767/768/799/1024/1136/1279/1366).
-   - Migrar progresivamente cada @media block al breakpoint canónico
-     más cercano, verificando layout en cada paso.
+   ESTADO POST-FASE-2.1 (consolidado):
+   - Los 13 breakpoints legacy (360/393/477/480/600/712/767/799/1024/1136/1279/1366)
+     fueron mapeados a los 5 canónicos (640/768/1024/1280/1440) según la tabla
+     definida en docs/tickets/FRONTEND-FASE-2.md sub-tarea 2.1.
+   - Reglas duplicadas por orden CSS (e.g. #page-header.*-header con
+     ≤393 + ≤600 + ≤1366) fueron fusionadas en un solo bloque ≤1280
+     porque en la cascada original ≤1366 ganaba siempre.
+   - Reglas idénticas para el mismo selector fueron mergeadas.
    ============================================================ */
 /* Estilos base (desktop) — todo lo que no esté en @media aplica a ≥1280px */
 
@@ -1609,7 +1608,7 @@ footer .copyright {
 /* 🎯 Tablets LANDSCAPE y VERTICAL (Evita afectar Desktop >=1280px) */
 /* Tamaños: 780x1024, 800x1280, 912x1368, 1024x600, 712x1138, 820x1180 */
 /* =============================== */
-@media (min-width: 712px) and (max-width: 1279px) {
+@media (min-width: 768px) and (max-width: 1280px) {
   #hero {
     height: 60vh;
     background-size: cover;
@@ -1654,10 +1653,11 @@ footer .copyright {
 }
 
 /* =============================== */
-/* 🟧 Teléfonos Medianos: hasta 768px */
-/* Tamaños: 480x854, 430x932, 414x896, 412x823, 412x735, 600x960 */
+/* 🟧 Tablet portrait y phones medianos: ≤768px */
+/* Fusiona ex-bloques ≤768 (originales) y ≤799 (navbar móvil, hero, feature).      */
 /* =============================== */
 @media (max-width: 768px) {
+  /* ex ≤768 */
   #navbar li a {
     font-size: 16px;
   }
@@ -1693,117 +1693,8 @@ footer .copyright {
     border-radius: 5px;
     margin-top: 10px;
   }
-}
 
-/* =============================== */
-/* 🟨 Teléfonos Pequeños: hasta 600px */
-/* Tamaños: 393x786, 390x844, 375x667, 360x640, 360x740, 353x745, 384x640, 320x658, 320x533 */
-/* =============================== */
-@media (max-width: 600px) {
-  .section-banner__box {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-}
-
-/* =============================== */
-/* 🟥 Teléfonos Muy Pequeños: hasta 477px */
-/* Tamaños: 360x640, 320x658, 320x533, 240x320 */
-/* =============================== */
-@media (max-width: 477px) {
-  .section-p1 {
-    padding: 20px;
-  }
-
-  #header {
-    padding: 10px 30px;
-  }
-
-  h1 {
-    font-size: 38px;
-  }
-
-  h2 {
-    font-size: 25px;
-  }
-
-  #hero {
-    padding: 0 20px;
-    background-position: 70% center;
-    background-size: cover;
-  }
-
-  #feature {
-    justify-content: space-between;
-  }
-
-  #feature .fe-box {
-    width: 155px;
-    margin: 0 0 15px 0;
-  }
-
-  #banner {
-    height: 40vh;
-  }
-
-  #sm-banner .banner-box {
-    width: 100%;
-  }
-
-  #sm-banner.banner-box.banner-box2 {
-    width: 100%;
-    height: 70vh;
-  }
-
-  #banner3 {
-    padding: 0 20px;
-  }
-
-  #banner3 .banner-box {
-    width: 100%;
-    background-size: 80%;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 30vh;
-  }
-
-  #banner3 .banner-box2 {
-    background-size: cover;
-  }
-
-  #banner3 .banner-box3 {
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 30vh;
-  }
-}
-
-/* =============================== */
-/* 🟩 Pantallas muy pequeñas: hasta 360px */
-/* Tamaños: 320x533, 240x320 */
-/* =============================== */
-@media (max-width: 360px) {
-  #sm-banner .banner-box2 {
-    height: 30vh;
-    padding: 20px;
-    justify-content: flex-start;
-  }
-
-  #sm-banner .banner-box2 h4,
-  #sm-banner .banner-box2 h2,
-  #sm-banner .banner-box2 span,
-  #sm-banner .banner-box2 button {
-    position: relative;
-    z-index: 2;
-    max-width: 100%;
-  }
-}
-
-/* =============================== */
-/* 🟫 Navegación móvil global: hasta 799px */
-/* =============================== */
-@media (max-width: 799px) {
+  /* ex ≤799 — navegación móvil + hero/feature/product1 mobile */
   .section-p1 {
     padding: 40px 40px;
   }
@@ -1881,13 +1772,112 @@ footer .copyright {
   }
 }
 
+/* =============================== */
+/* 🟥 Phones (≤640px) — fusiona ex ≤600 + ≤477 + ≤360.                              */
+/* Las reglas de ≤360 (#sm-banner .banner-box2) eran redundantes con ≤477          */
+/* (#sm-banner.banner-box.banner-box2 h: 70vh) en la mayoría de devices y el       */
+/* solo override del ≤360 era contenido posicionamiento — ahora aplica desde 640.  */
+/* =============================== */
+@media (max-width: 640px) {
+  /* ex ≤600 */
+  .section-banner__box {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  /* ex ≤477 */
+  .section-p1 {
+    padding: 20px;
+  }
+
+  #header {
+    padding: 10px 30px;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  #hero {
+    padding: 0 20px;
+    background-position: 70% center;
+    background-size: cover;
+  }
+
+  #feature {
+    justify-content: space-between;
+  }
+
+  #feature .fe-box {
+    width: 155px;
+    margin: 0 0 15px 0;
+  }
+
+  #banner {
+    height: 40vh;
+  }
+
+  #sm-banner .banner-box {
+    width: 100%;
+  }
+
+  #sm-banner.banner-box.banner-box2 {
+    width: 100%;
+    height: 70vh;
+  }
+
+  #banner3 {
+    padding: 0 20px;
+  }
+
+  #banner3 .banner-box {
+    width: 100%;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30vh;
+  }
+
+  #banner3 .banner-box2 {
+    background-size: cover;
+  }
+
+  #banner3 .banner-box3 {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 30vh;
+  }
+
+  /* ex ≤360 — banner-box2 posicionamiento de textos */
+  #sm-banner .banner-box2 {
+    height: 30vh;
+    padding: 20px;
+    justify-content: flex-start;
+  }
+
+  #sm-banner .banner-box2 h4,
+  #sm-banner .banner-box2 h2,
+  #sm-banner .banner-box2 span,
+  #sm-banner .banner-box2 button {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+  }
+}
 
 
 
-/*Shop header image*/
 
-/* 📱 Teléfonos pequeños */
-@media (max-width: 480px) {
+/* Shop header image — fusiona ex ≤480 (duplicado), ≤481-767 y ≤768-1136. */
+/* El segundo bloque ≤480 duplicaba al primero con menos propiedades; mergeado.  */
+
+/* Phones — ex ≤480 (ambos bloques) */
+@media (max-width: 640px) {
   #page-header {
     padding: 0 20px;
     height: 55vh;
@@ -1906,12 +1896,11 @@ footer .copyright {
   #page-header p {
     font-size: 0.95rem;
     display: block;
-    /* 👈 Asegúrate que no esté oculto */
   }
 }
 
-/* 📱 Teléfonos medianos */
-@media (min-width: 481px) and (max-width: 767px) {
+/* Phones medianos / tablet portrait — ex 481-767 */
+@media (min-width: 640px) and (max-width: 768px) {
   #page-header {
     padding: 0 30px;
   }
@@ -1925,8 +1914,8 @@ footer .copyright {
   }
 }
 
-/* 📱 Tablets */
-@media (min-width: 768px) and (max-width: 1136px) {
+/* Tablets — ex 768-1136 */
+@media (min-width: 768px) and (max-width: 1024px) {
   #page-header {
     height: 60vh;
     padding: 0 40px;
@@ -1945,65 +1934,12 @@ footer .copyright {
   }
 }
 
-/* Teléfonos pequeños */
-@media (max-width: 480px) {
-  #page-header {
-    padding: 0 20px;
-    height: 55vh;
-  }
-
-  #page-header h2 {
-    font-size: 1.3rem;
-  }
-
-  #page-header p {
-    font-size: 0.95rem;
-  }
-}
-
-/*@QUERIES DEL ABOUT-HEADER🔧 y el h2 y el parrafo. Media Queries Responsivas
-📱 //* Queries para teléfonos – pantallas pequeñas*/
-/* 🌐 Tablets y pantallas medianas */
-/* 393 x 786, 390 x 844, 375 x 667, 360 x 640, 360 x 740, 353 x 745, 320 x 658, 384 x 640, 320 x 533, 240 x 320 */
-@media (max-width: 393px) {
-  #page-header.about-header {
-    background-position: 65%;
-    align-items: center;
-    text-align: center;
-    padding: 0 16px;
-  }
-
-  #page-header.about-header h2 {
-    font-size: 22px;
-  }
-
-  #page-header.about-header p {
-    font-size: 13px;
-    padding: 0;
-  }
-}
-
-/* 480 x 854, 430 x 932, 414 x 896, 412 x 823, 412 x 735, 600 x 960 */
-@media (max-width: 600px) {
-  #page-header.about-header {
-    background-position: 65%;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-  }
-
-  #page-header.about-header h2 {
-    font-size: 26px;
-  }
-
-  #page-header.about-header p {
-    font-size: 14px;
-    padding: 0;
-  }
-}
-
-/* 780 x 1024, 800 x 1280, 640 x 360, 912 x 1368, 1024 x 600, 712 x 1138, 820 x 1180, 1024 x 1366 */
-@media (max-width: 1366px) {
+/* ABOUT-HEADER responsive
+   En la versión legacy había 3 bloques (≤393, ≤600, ≤1366) que apuntaban al
+   mismo selector. Por orden CSS, ≤1366 ganaba SIEMPRE en cualquier viewport
+   ≤1366 — los otros dos quedaban inertes. Fusionado a un solo bloque ≤1280
+   con los valores que efectivamente se renderizaban. */
+@media (max-width: 1280px) {
   #page-header.about-header {
     background-position: 65%;
     align-items: flex-start;
@@ -2021,49 +1957,10 @@ footer .copyright {
 }
 
 
-/*@QUERIES DEL CONTACT-HEADER🔧 y el h2 y el parrafo. Media Queries Responsivas
-📱 //* Queries para teléfonos – pantallas pequeñas*/
-/* 🌐 Tablets y pantallas medianas */
-/* 393 x 786, 390 x 844, 375 x 667, 360 x 640, 360 x 740, 353 x 745, 320 x 658, 384 x 640, 320 x 533, 240 x 320 */
-@media (max-width: 393px) {
-  #page-header.contact-header {
-    background-position: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 16px;
-  }
-
-  #page-header.contact-header h2 {
-    font-size: 22px;
-  }
-
-  #page-header.contact-header p {
-    font-size: 13px;
-    padding: 0;
-  }
-}
-
-/* 480 x 854, 430 x 932, 414 x 896, 412 x 823, 412 x 735, 600 x 960 */
-@media (max-width: 600px) {
-  #page-header.contact-header {
-    background-position: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-  }
-
-  #page-header.contact-header h2 {
-    font-size: 26px;
-  }
-
-  #page-header.contact-header p {
-    font-size: 14px;
-    padding: 0;
-  }
-}
-
-/* 780 x 1024, 800 x 1280, 640 x 360, 912 x 1368, 1024 x 600, 712 x 1138, 820 x 1180, 1024 x 1366 */
-@media (max-width: 1366px) {
+/* CONTACT-HEADER responsive — mismo patrón que about-header.
+   3 bloques legacy (≤393, ≤600, ≤1366) → fusionados a ≤1280 con valores que
+   efectivamente ganaban por orden CSS. */
+@media (max-width: 1280px) {
   #page-header.contact-header {
     background-position: center;
     align-items: flex-start;
@@ -2083,9 +1980,10 @@ footer .copyright {
 
 
 
-/* Single Product */
-
-@media (max-width: 477px) {
+/* Single product / Blog / About responsive — phones (≤640px)
+   Fusiona 3 ex bloques ≤477 (prodetails, blog, about-head + about-app). */
+@media (max-width: 640px) {
+  /* ex Single Product */
   #prodetails {
     display: flex;
     flex-direction: column;
@@ -2098,22 +1996,9 @@ footer .copyright {
 
   #prodetails .simgle-pro-details {
     width: 100%;
-
   }
-}
 
-
-/* @media Blog header image*/
-
-#page-header.blog-header {
-  background-image: url("../img/banner/b19.webp");
-  background-size: cover;
-  background-position: center;
-
-}
-
-/* @media Blog responsive */
-@media (max-width: 477px) {
+  /* ex Blog responsive */
   #blog {
     padding: 100px 20px 0 20px;
   }
@@ -2122,7 +2007,6 @@ footer .copyright {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
   }
 
   #blog .blog-img {
@@ -2134,21 +2018,11 @@ footer .copyright {
   #blog .blog-details {
     width: 100%;
   }
-}
 
-
-/* @media About responsive */
-
-
-@media (max-width: 477px) {
+  /* ex About responsive */
   #about-head {
-
     flex-direction: column;
-
   }
-
-  /*Photography responsive*/
-
 
   #about-head img {
     width: 100%;
@@ -2159,17 +2033,20 @@ footer .copyright {
     padding-left: 0px;
   }
 
-
-  /* Video Responsive */
-
   #about-app .video {
     width: 100%;
-
   }
 }
 
-/* Contact form layout — extraído de @media nested inválido (era 2141-2162) */
-@media (max-width: 799px) {
+/* @media Blog header image (no es @media, es selector base — preservado tal cual) */
+#page-header.blog-header {
+  background-image: url("../img/banner/b19.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Contact form layout (tablet portrait y phones) — ex ≤799 */
+@media (max-width: 768px) {
   #form-details {
     padding: 40px;
   }
@@ -2187,11 +2064,8 @@ footer .copyright {
   }
 }
 
-
-/* CONTACT PAGE */
-/* @media CONTAC PAGE*/
-
-@media (max-width: 477px) {
+/* CONTACT PAGE — phones (≤640px), ex ≤477 */
+@media (max-width: 640px) {
   #contact-details {
     flex-direction: column;
   }
@@ -2206,7 +2080,6 @@ footer .copyright {
   }
 
   #form-details {
-
     margin: 10px;
     padding: 30px 10px;
     flex-wrap: wrap;
@@ -2216,54 +2089,14 @@ footer .copyright {
     width: 100%;
     margin-bottom: 30px;
   }
-
 }
 
 /* CART PAGE */
 
-/*@QUERIES DEL CART-HEADER🔧 y el h2 y el parrafo. Media Queries Responsivas
-📱 //* Queries para teléfonos – pantallas pequeñas*/
-/* 🌐 Tablets y pantallas medianas */
-/* 393 x 786, 390 x 844, 375 x 667, 360 x 640, 360 x 740, 353 x 745, 320 x 658, 384 x 640, 320 x 533, 240 x 320 */
-@media (max-width: 393px) {
-  #page-header.cart-header {
-    background-position: 65%;
-    align-items: center;
-    text-align: center;
-    padding: 0 16px;
-  }
-
-  #page-header.cart-header h2 {
-    font-size: 22px;
-  }
-
-  #page-header.cart-header p {
-    font-size: 13px;
-    padding: 0;
-  }
-}
-
-/* 480 x 854, 430 x 932, 414 x 896, 412 x 823, 412 x 735, 600 x 960 */
-@media (max-width: 600px) {
-  #page-header.cart-header {
-    background-position: 65%;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-  }
-
-  #page-header.cart-header h2 {
-    font-size: 26px;
-  }
-
-  #page-header.cart-header p {
-    font-size: 14px;
-    padding: 0;
-  }
-}
-
-/* 780 x 1024, 800 x 1280, 640 x 360, 912 x 1368, 1024 x 600, 712 x 1138, 820 x 1180, 1024 x 1366 */
-@media (max-width: 1366px) {
+/* CART-HEADER responsive — mismo patrón que about/contact-header.
+   3 bloques legacy (≤393, ≤600, ≤1366) → fusionados a ≤1280 con valores que
+   efectivamente ganaban por orden CSS. */
+@media (max-width: 1280px) {
   #page-header.cart-header {
     background-position: 65%;
     align-items: flex-start;
@@ -2280,9 +2113,8 @@ footer .copyright {
   }
 }
 
-
-
-@media (max-width: 477px) {
+/* Cart layout en phones — ex ≤477 */
+@media (max-width: 640px) {
   #cart-add {
     flex-direction: column;
   }
@@ -2324,8 +2156,8 @@ footer .copyright {
   }
 }
 
-/* Asegurar que el contador sea visible en pantallas más pequeñas */
-@media (max-width: 600px) {
+/* Cart counter en phones — ex ≤600 → ≤640 */
+@media (max-width: 640px) {
   .cart-count {
     font-size: 10px;
     /* Reducir el tamaño de la fuente en pantallas muy pequeñas */
@@ -2374,108 +2206,52 @@ footer .copyright {
 
 
 
-/* 🎯 Media Queries — Página de Autenticación (móviles ≤600px)
-   Nota: había un bloque duplicado idéntico justo abajo, removido en consolidación.
-   Los valores que prevalecen son los más recientes (90→95% width, etc.). */
-@media (max-width: 600px) {
+/* 🎯 Página de Autenticación + feature mobile — phones (≤640px).
+   Fusiona ex ≤600 (auth-wrapper/section/login-btn) y ex ≤360 (auth-section,
+   #feature, banner-box2). Cuando había conflicto entre los dos (auth-section
+   width/padding), gana el ≤360 por orden CSS — preservado igual.
+   Las reglas de #sm-banner .banner-box2 del ex ≤360 ya están en el bloque
+   ≤640 de "Phones" más arriba; aquí se mantienen las de auth y feature. */
+@media (max-width: 640px) {
   #auth-wrapper {
     align-items: flex-end;
     padding-bottom: 60px;
   }
 
+  /* auth-section: valores ex ≤360 prevalecen (más restrictivos para phones chicos),
+     pero como ex ≤600 también incluía background y box-shadow, los preservo. */
   #auth-section {
-    width: 95%;
-    padding: 30px 20px;
+    width: 96%;
+    padding: 20px 15px;
+    border-radius: 10px;
     background: rgba(255, 255, 255, 0.65);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   }
 
   #auth-section h2 {
-    font-size: var(--t-2xl);
-  }
-
-  #login-btn {
-    padding: 14px 28px;
-    font-size: var(--t-base);
-  }
-}
-
-/* 📱 Media Query: Dispositivos con ancho máximo de 360px (Ej: Galaxy S9+, móviles pequeños) */
-@media (max-width: 360px) {
-
-  /* 🎯 Banner pequeño (segunda caja) */
-  #sm-banner .banner-box2 {
-    height: 30vh;
-    /* Altura reducida del banner */
-    padding: 20px;
-    /* Espaciado interno para contenido */
-    justify-content: flex-start;
-    /* Alineación del contenido al inicio */
-  }
-
-  /* 📝 Textos y elementos del banner */
-  #sm-banner .banner-box2 h4,
-  #sm-banner .banner-box2 h2,
-  #sm-banner .banner-box2 span,
-  #sm-banner .banner-box2 button {
-    position: relative;
-    /* Para mantener su flujo normal */
-    z-index: 2;
-    /* Encima de cualquier fondo */
-    max-width: 100%;
-    /* Evita desbordes horizontales */
-  }
-
-  /* 🔐 Sección de Autenticación */
-  #auth-section {
-    width: 96%;
-    /* Casi ancho completo para margen lateral */
-    padding: 20px 15px;
-    /* Espaciado interno equilibrado */
-    border-radius: 10px;
-    /* Bordes suavizados */
-  }
-
-  /* 🔡 Título de autenticación */
-  #auth-section h2 {
     font-size: 1.4rem;
-    /* Tamaño de fuente adaptado al móvil */
   }
 
-  /* 🔘 Botón de iniciar sesión */
   #login-btn {
     padding: 12px 24px;
-    /* Botón más cómodo al tacto */
     font-size: 0.95rem;
-    /* Texto legible en pantallas pequeñas */
   }
 
-  /* ✨ Sección de características */
+  /* ✨ Sección de características — ex ≤360 */
   #feature {
     display: flex;
-    /* Flexbox para alineación */
     flex-wrap: wrap;
-    /* Permite saltos de línea */
     justify-content: center;
-    /* Centrado horizontal forzado */
     align-items: center;
-    /* Centrado vertical */
     gap: 16px;
-    /* Separación entre elementos */
     padding: 20px 10px;
-    /* Espaciado general */
   }
 
-  /* 🔳 Caja individual de feature */
   #feature .fe-box {
     width: 50%;
-    /* Dos cajas por fila */
     max-width: 140px;
-    /* Tamaño máximo para evitar que se estire */
     margin: 10px auto;
-    /* Margen vertical + centrado horizontal */
     text-align: center;
-    /* Contenido centrado dentro de la caja */
   }
 }
 
