@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gracias por tu compra. Te enviaremos la confirmación por correo."
+    />
+    <title>Gracias por tu compra | Tu Tienda Artesanal</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .thank-you-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+        background-color: #f3f4f6;
+        text-align: center;
+      }
+
+      .thank-you-container h1 {
+        font-size: 2rem;
+        color: #088178;
+        margin-bottom: 1rem;
+      }
+
+      .thank-you-container p {
+        font-size: 1rem;
+        max-width: 600px;
+        margin-bottom: 2rem;
+        color: #333;
+      }
+
+      .thank-you-container a {
+        text-decoration: none;
+        background-color: #088178;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      .thank-you-container a:hover {
+        background-color: #06695e;
+      }
+
+      .alerta-integridad {
+        font-weight: bold;
+        margin-top: 1rem;
+        color: #c0392b;
+      }
+
+      @media (max-width: 600px) {
+        .thank-you-container h1 {
+          font-size: 1.5rem;
+        }
+        .thank-you-container p {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="thank-you-container">
+      <h1>¡Gracias por tu compra!</h1>
+      <p>
+        Tu pedido ha sido recibido correctamente. En breve recibirás un correo
+        con los detalles de la transacción.
+      </p>
+      <div id="mensaje-integridad" class="alerta-integridad"></div>
+      <a href="index.html">Volver a la tienda</a>
+    </main>
+
+    <script type="module">
+      document.addEventListener('DOMContentLoaded', () => {
+        const mensaje = document.getElementById('mensaje-integridad');
+
+        // Limpiar carrito de localStorage
+        localStorage.removeItem('carrito');
+
+        // Como toda la validación se hace en backend, ya no verificamos firma aquí
+        mensaje.textContent =
+          '✅ Gracias por tu compra. Tu pedido fue procesado exitosamente.';
+        mensaje.style.color = '#088178';
+
+        // Limpiar sesión aunque ya no se use firma
+        sessionStorage.removeItem('carritoFirmado');
+        sessionStorage.removeItem('firmaCarrito');
+        sessionStorage.removeItem('claveHMAC');
+      });
+    </script>
+  </body>
+</html>

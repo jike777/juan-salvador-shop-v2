@@ -1,0 +1,203 @@
+/* 🎯 COLECCIONES Y OFERTAS - Juan Salvador'Shop */
+/* ✅ Estilos únicos pero visualmente alineados al general */
+
+/* 🌄 Secciones */
+.colecciones-section {
+    padding: 40px 80px;
+    text-align: center;
+}
+
+/* 🎉 Banners personalizados */
+#coleccion-banner,
+#ofertas-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: 30%;
+    width: 100%;
+    height: 60vh;
+    border-radius: 10px;
+    color: #fff;
+}
+
+#coleccion-banner {
+    background-image: url("img/banner/juliana-beso-juan.webp");
+
+}
+
+#ofertas-banner {
+    background-image: url("img/banner/juan-tesoro-banner.webp");
+}
+
+#coleccion-banner h2 span,
+#ofertas-banner h2 span {
+    color: #ef3636;
+}
+
+#coleccion-banner h4,
+#ofertas-banner h4 {
+    font-size: 20px;
+    color: #f9f6f6;
+}
+
+#coleccion-banner h2,
+#ofertas-banner h2 {
+    font-size: 35px;
+    padding: 10px 0;
+}
+
+#coleccion-banner p,
+#ofertas-banner p {
+    color: #fff;
+}
+
+/* 📦 Sección informativa */
+.info-highlight {
+    background-color: #f4f4f4;
+    padding: 40px 60px;
+    border-radius: 12px;
+    margin: 2rem 0;
+    color: #333;
+    text-align: center;
+}
+
+.info-highlight--light {
+    background-color: #fff;
+}
+
+/* 🛒 Contenedor de productos (basado en #product1 .pro-container) */
+.coleccion-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 20px;
+}
+
+/* 🧱 Producto individual */
+.coleccion-grid .pro {
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 25px;
+
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    transition: 0.2s ease;
+    background-color: #fff;
+    position: relative;
+    /* ✅ Esta línea lo arregla */
+}
+
+.coleccion-grid .pro:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+.coleccion-grid .pro img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.coleccion-grid .pro .des {
+    text-align: start;
+    padding: 10px 0;
+}
+
+.coleccion-grid .pro .des span {
+    color: #606063;
+    font-size: 12px;
+}
+
+.coleccion-grid .pro .des h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+.coleccion-grid .pro .des i {
+    font-size: 12px;
+    color: rgba(243, 181, 25);
+}
+
+.coleccion-grid .pro .des h4 {
+    padding-top: 7px;
+    font-size: 15px;
+    color: #088178;
+}
+
+/* 🛒 Icono carrito */
+/* 🛒 Botón de carrito exclusivo de colecciones/ofertas */
+.cart-coleccion {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: #e8f6ea;
+    /* fondo blanco o transparente */
+    color: #088178;
+    border: 1px solid #cce7d0;
+    /* borde para simular el estilo index */
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    z-index: 2;
+}
+
+.star i {
+    color: #f3b519;
+    font-size: 16px;
+    margin-right: 2px;
+}
+
+.cart-coleccion i {
+    color: #088178;
+}
+
+.cart-coleccion:hover {
+    animation: bounce-cart 0.4s ease;
+}
+
+@keyframes bounce-cart {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+/* 🔙 Botón centrado */
+.back-button-wrapper-co {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.back-button-co {
+    background-color: #088178;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button-co:hover {
+    background-color: #066b65;
+}

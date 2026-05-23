@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmación de Pago</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #confirmation-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f8fa;
+      }
+
+      #confirmation-box {
+        background: white;
+        border-radius: 12px;
+        padding: 40px;
+        max-width: 600px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      #confirmation-box h2 {
+        color: #088178;
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      #confirmation-box p {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .status-success {
+        color: #2dce89;
+      }
+
+      .status-error {
+        color: #e63946;
+      }
+
+      .status-pending {
+        color: #f4a261;
+      }
+
+      .button-container {
+        margin-top: 30px;
+      }
+
+      .button-container a {
+        text-decoration: none;
+      }
+
+      .button-container .normal {
+        background-color: #088178;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="confirmation-wrapper">
+      <div id="confirmation-box">
+        <h2 id="estado">Procesando...</h2>
+        <p id="mensaje">Espere un momento...</p>
+        <p id="info-extra"></p>
+        <div class="button-container">
+          <a href="index.html">
+            <button class="normal">Volver al inicio</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const estado = params.get('x_response');
+      const id = params.get('x_transaction_id') || 'Desconocido';
+      const monto = params.get('x_amount') || '0.00';
+      const moneda = params.get('x_currency_code') || 'COP';
+      const email = params.get('x_customer_email') || 'No disponible';
+
+      const estadoEl = document.getElementById('estado');
+      const mensajeEl = document.getElementById('mensaje');
+      const infoExtraEl = document.getElementById('info-extra');
+
+      if (estado === 'Aceptada') {
+        estadoEl.textContent = '✅ ¡Pago exitoso!';
+        estadoEl.classList.add('status-success');
+        mensajeEl.textContent = `Gracias por tu compra. Hemos recibido tu pago de ${moneda} $${monto}.`;
+      } else if (estado === 'Rechazada') {
+        estadoEl.textContent = '❌ Pago rechazado';
+        estadoEl.classList.add('status-error');
+        mensajeEl.textContent = `Tu pago fue rechazado. Por favor verifica los datos o intenta con otro método de pago.`;
+      } else if (estado === 'Pendiente') {
+        estadoEl.textContent = '⏳ Pago pendiente';
+        estadoEl.classList.add('status-pending');
+        mensajeEl.textContent = `Tu transacción está siendo procesada. Te informaremos tan pronto como se confirme el pago.`;
+      } else {
+        estadoEl.textContent = '⚠️ Estado desconocido';
+        estadoEl.classList.add('status-error');
+        mensajeEl.textContent = `No pudimos determinar el estado de tu pago.`;
+      }
+
+      infoExtraEl.innerHTML = `
+      <strong>ID de transacción:</strong> ${id}<br>
+      <strong>Correo:</strong> ${email}
+    `;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,660 @@
+[
+  {
+    "id": 1,
+    "nombre": "Pulsera 7 Chakras",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-7chakras-oro-laminado-1.webp",
+    "descripcion": "Pulsera de 7 chakras en oro laminado 18k con piedras naturales, ideal para equilibrar energía y estilo.",
+    "precio": 89000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera de 7 chakras elaborada en oro laminado de 18k, con piedras naturales que representan cada chakra. Diseñada para equilibrar la energía y aportar estilo a tu look. Ideal para uso diario o como regalo especial. Ajustable y cómoda, perfecta para cualquier ocasión. Medidas: longitud ajustable de 16 a 22 cm.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-7chakras-oro-laminado-5.webp",
+      "img/products/pulseras/pulsera-7chakras-oro-laminado-2.webp",
+      "img/products/pulseras/pulsera-7chakras-oro-laminado-1.webp",
+      "img/products/pulseras/pulsera-7chakras-oro-laminado-4.webp"
+    ],
+    "categoria": "general",
+    "oferta": false
+  },
+  {
+    "id": 2,
+    "nombre": "Pulsera Piedras",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/a-pulsera-oro-laminado-cornalina-murano.webp",
+    "descripcion": "Pulsera de oro laminado con piedras semipreciosas, lápiz lázuli, jade, cornalina, onix y ojo de tigre con murano, ideal para un look elegante y moderno.",
+    "precio": 35000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera de macramé hecha a mano con piedras naturales lápiz lázuli, jade, cornalina y ojo de tigre con murano, perfecta para un estilo bohemio y único. Ajustable y cómoda, ideal para uso diario o como regalo especial. Medidas: longitud ajustable de 16 a 22 cm.",
+    "imagenes": [
+      "img/products/pulseras/e-pursera-oro-laminado-ojotigre-murano.webp",
+      "img/products/pulseras/b-pulsera-oro-laminado-jade-murano.webp",
+      "img/products/pulseras/c-pulsera-oro-laminado-lapizlazuli-murano.webp",
+      "img/products/pulseras/d-pulsera-oro-laminado-turquesa-murano.webp"
+    ],
+    "categoria": "general",
+    "oferta": false
+  },
+  {
+    "id": 3,
+    "nombre": "Pulsera Ojo Turco",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-piedra-semipreciosa-oro-laminado-ojo-turco-1.webp",
+    "descripcion": "Pulsera de macramé ojo turco con piedras naturales, lápiz lázuli, jade, cornalina y ojo de tigre, ideal para un look bohemio y único.",
+    "precio": 45000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera de macramé hecha a mano con ojo turco, oro laminado, murano italiano y piedras naturales como: lápiz lázuli, jade, cornalina y ojo de tigre, perfecta para un estilo bohemio y único. Ajustable y cómoda, ideal para uso diario o como regalo especial. Medidas: longitud ajustable de 16 a 22 cm.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-piedra-semipreciosa-oro-laminado-ojo-turco.webp",
+      "img/products/pulseras/pulsera-piedra-semipreciosa-oro-laminado-ojo-turco-1.webp",
+      "img/products/pulseras/pulsera-piedra-semipreciosa-oro-laminado-ojo-turco.webp",
+      "img/products/pulseras/pulsera-piedra-semipreciosa-oro-laminado-ojo-turco-1.webp"
+    ],
+    "categoria": "general",
+    "oferta": false
+  },
+  {
+    "id": 4,
+    "nombre": "Pulsera oro laminado ónix y citrino.",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-oro-laminado-onix-citrino-3.webp",
+    "descripcion": "Pulsera de oro laminado con un balin diamantado #8 y 6 lisos #4 con piedras semipreciosas, onix y citrino tejida a mano, ideal para un look elegante y moderno.",
+    "precio": 120000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera tejida a mano con macramé, oro laminado, balín diamantado #8 y 6 lisos #4, además de piedras semipreciosas como ónix y citrino. Perfecta para un estilo elegante y moderno. Ajustable y cómoda, ideal para uso diario o como regalo especial. Medidas: longitud ajustable de 16 a 22 cm.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-oro-laminado-onix-citrino-1.webp",
+      "img/products/pulseras/pulsera-oro-laminado-onix-citrino-2.webp",
+      "img/products/pulseras/pulsera-oro-laminado-onix-citrino-3.webp",
+      "img/products/pulseras/pulsera-oro-laminado-onix-citrino-4.webp"
+    ],
+    "categoria": "general",
+    "oferta": false
+  },
+  {
+    "id": 5,
+    "nombre": "Pulsera estrellita",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-estrellita-cristales-6.webp",
+    "descripcion": "Pulsera de macramé tejido plano hecha a mano, diseñada con estrellita, cristales y chaquira checa en diversos colores. ",
+    "precio": 10000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera de macramé tejido plano hecha a mano, diseñada con estrellita, cristales y chaquira checa en diversos colores. Perfecta para un estilo único y moderno. Ajustable y cómoda, ideal para uso diario o como regalo especial. Medidas: longitud ajustable de 16 a 22 cm.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-estrellita-cristales-1.webp",
+      "img/products/pulseras/pulsera-estrellita-cristales-2.webp",
+      "img/products/pulseras/pulsera-estrellita-cristales-3.webp",
+      "img/products/pulseras/pulsera-estrellita-cristales-4.webp"
+    ],
+    "categoria": "general",
+    "oferta": false
+  },
+  {
+    "id": 6,
+    "nombre": "Pulsera diagonal 18k",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-2oro-laminado-diagonal-1.webp",
+    "descripcion": "Pulsera de doble hilo con oro laminado 18k balines #2.5 con diseño diagonal moderno y elegante.",
+    "precio": 130000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera de macramé doble hilo con 60 balines de oro laminado 18k #2.5, patrón diagonal trenzado a mano, tecnica macrame. Ideal para un look clásico con toque artesanal. Longitud ajustable de 16 a 22 cm.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-2oro-laminado-diagonal-1.webp",
+      "img/products/pulseras/pulsera-2oro-laminado-diagonal-2.webp",
+      "img/products/pulseras/pulsera-2oro-laminado-diagonal-3.webp",
+      "img/products/pulseras/pulsera-2oro-laminado-diagonal-4.webp"
+    ],
+    "categoria": "general",
+    "oferta": false
+  },
+  {
+    "id": 7,
+    "nombre": "Pulseras amor infinito 18k",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-amor-infinito-1.webp",
+    "descripcion": "Pulseras con símbolo de infinito oro laminado 18k, reflejo de amor eterno y elegancia.Viene en pareja",
+    "precio": 260000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulseras para parejitas tejida a mano con símbolo infinito en oro laminado 18k #2.5mm - 3mm - 4mm. Representa unión, energía y conexión. Ajustable, ideal para regalar o usar a diario.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-amor-infinito-1.webp",
+      "img/products/pulseras/pulsera-amor-infinito-2.webp",
+      "img/products/pulseras/pulsera-amor-infinito-3.webp",
+      "img/products/pulseras/pulsera-amor-infinito-4.webp"
+    ],
+    "categoria": "general",
+    "oferta": false
+  },
+  {
+    "id": 8,
+    "nombre": "Pulsera amor 18k",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-amor-oro-laminado-1.webp",
+    "descripcion": "Pulsera de macramé con corazón laminado en oro 18k, diseño delicado y elegante, para todas las parejas.",
+    "precio": 220000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera hecha a mano con detalle de corazón en oro laminado 18k. Cómoda, ajustable, perfecta para un look romántico y moderno.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-amor-oro-laminado-1.webp",
+      "img/products/pulseras/pulsera-amor-oro-laminado-2.webp",
+      "img/products/pulseras/pulsera-amor-oro-laminado-3.webp",
+      "img/products/pulseras/pulsera-amor-oro-laminado-4.webp"
+    ],
+    "categoria": "general",
+    "oferta": false
+  },
+  {
+    "id": 9,
+    "nombre": "Pulsera circular clásica 18k",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-circular-con-bordes-oro-laminado-1.webp",
+    "descripcion": "Pulsera con forma circular y bordes con 30 balines en oro laminado 18k numero #3, un estilo atemporal.",
+    "precio": 90000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera circular en oro laminado 18k con bordes finos. Macramé ajustable, ideal para looks casuales y formales. Hecha artesanalmente.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-circular-con-bordes-oro-laminado-1.webp",
+      "img/products/pulseras/pulsera-circular-con-bordes-oro-laminado-2.webp",
+      "img/products/pulseras/pulsera-circular-con-bordes-oro-laminado-3.webp",
+      "img/products/pulseras/pulsera-circular-con-bordes-oro-laminado-4.webp"
+    ],
+    "categoria": "general",
+    "oferta": false
+  },
+  {
+    "id": 10,
+    "nombre": "Pulsera circular deluxe 18k",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-circular-mucho-oro-laminado-1.webp",
+    "descripcion": "Diseño con detalles circulares con 157 balines en oro laminado 18k #2.5mm. Garantia un año",
+    "precio": 369600,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera de macramé con decoración circular en oro laminado 18k. Ideal para resaltar estilo y presencia. Ajuste suave, resistente al uso diario.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-circular-mucho-oro-laminado-1.webp",
+      "img/products/pulseras/pulsera-circular-mucho-oro-laminado-2.webp",
+      "img/products/pulseras/pulsera-circular-mucho-oro-laminado-3.webp",
+      "img/products/pulseras/pulsera-circular-mucho-oro-laminado-4.webp"
+    ],
+    "categoria": "general",
+    "oferta": false
+  },
+  {
+    "id": 11,
+    "nombre": "Pulsera doble círculo",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-doble-circulo-oro-laminado-1.webp",
+    "descripcion": "Pulsera doble aros con 27 balines en oro laminado,#2.5mm, entrelazados en esta elegante pulsera artesanal.",
+    "precio": 64800,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera de macramé con doble aro en oro laminado 18k, simboliza conexión y continuidad. Hecha a mano, cómoda, ideal para uso cotidiano.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-doble-circulo-oro-laminado-1.webp",
+      "img/products/pulseras/pulsera-doble-circulo-oro-laminado-2.webp",
+      "img/products/pulseras/pulsera-doble-circulo-oro-laminado-3.webp",
+      "img/products/pulseras/pulsera-doble-circulo-oro-laminado-4.webp"
+    ],
+    "categoria": "general",
+    "oferta": false
+  },
+  {
+    "id": 12,
+    "nombre": "Pulsera jade y oro lamiado 18k",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-jade-oro-laminado-1.webp",
+    "descripcion": "Pulsera con 10 piedras jade detalles en oro laminado 18k, pura armonía.",
+    "precio": 243000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera artesanal con jade natural, 10 piedreas numero 4mm y con 8 balines en oro laminado #2.5mm - 3mm - 4mm - 6mm y un balin #8mm diamantado. Representa sabiduría, la pureza, la serenidad y la protección. Ajuste perfecto, hecha a mano.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-jade-oro-laminado-1.webp",
+      "img/products/pulseras/pulsera-jade-oro-laminado-2.webp",
+      "img/products/pulseras/pulsera-jade-oro-laminado-3.webp",
+      "img/products/pulseras/pulsera-jade-oro-laminado-4.webp"
+    ],
+    "categoria": "general",
+    "oferta": false
+  },
+  {
+    "id": 13,
+    "nombre": "Pulsera neopreno dorada",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-neopreno-oro-laninado-1.webp",
+    "descripcion": "Pulsera para pararejas diseño moderno con tira de neopreno laminado y oro laminado 18k. #5mm",
+    "precio": 376000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulseras para pareja hecha a mano con 9 neoprenos doble lamina y 10 balines en oro laminado #5mm, para ella y 8 balines #6mm y 9 neoprenos con 3 laminas #8mm. Combina estilo deportivo y elegante. Ajustable, ideal para toda ocasión.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-neopreno-oro-laninado-1.webp",
+      "img/products/pulseras/pulsera-neopreno-oro-laninado-2.webp",
+      "img/products/pulseras/pulsera-neopreno-oro-laninado-3.webp",
+      "img/products/pulseras/pulsera-neopreno-oro-laninado-4.webp"
+    ],
+    "categoria": "general",
+    "oferta": false
+  },
+  {
+    "id": 14,
+    "nombre": "Pulsera muralla dorada",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-oro-laninado-murralla-1.webp",
+    "descripcion": "Pulsera tipo muralla de esmeralda con trenzado firme y oro laminado 18k, ideal para un look intenso.",
+    "precio": 300000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera tipo muralla de esmeralda colombiana con 4 piedras tamboredas #5mm y 4 balines en oro laminado 18k #5mm para ella y 4 piedras tamboreadas #8mm y 4 balines en oro laminado 18k #8mm para el, con diseño estructurado. Artesanía sólida, trenzado plano con acabado en balines de oro laminado #3mm. Ideal para destacar.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-oro-laninado-murralla-1.webp",
+      "img/products/pulseras/pulsera-oro-laninado-murralla-2.webp",
+      "img/products/pulseras/pulsera-oro-laninado-murralla-3.webp",
+      "img/products/pulseras/pulsera-oro-laninado-murralla-4.webp"
+    ],
+    "categoria": "general",
+    "oferta": false
+  },
+  {
+    "id": 15,
+    "nombre": "Pulsera Colombia Chaquira",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-colombia-chaquira-checa-1.webp",
+    "descripcion": "Pulsera vibrante con los colores de Colombia y detalles en chaquira checa.",
+    "precio": 10000,
+    "estrellas": 4.5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera tejida a mano con chaquira checa en tonos patrios. Ajustable y resistente para uso diario.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-colombia-chaquira-checa-1.webp",
+      "img/products/pulseras/pulsera-colombia-chaquira-checa-2.webp",
+      "img/products/pulseras/pulsera-colombia-chaquira-checa-3.webp",
+      "img/products/pulseras/pulsera-colombia-chaquira-checa-4.webp"
+    ],
+    "categoria": "ofertas",
+    "oferta": true
+  },
+  {
+    "id": 16,
+    "nombre": "Pulsera Conchita Negra Rasta",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-conchita-negra-rasta-1.webp",
+    "descripcion": "Pulsera negra con conchita central y acentos en colores rasta.",
+    "precio": 10000,
+    "estrellas": 4.5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Macramé ajustable con conchita natural y detalles en rojo, verde y amarillo. Ideal para un look relajado.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-conchita-negra-rasta-1.webp",
+      "img/products/pulseras/pulsera-conchita-negra-rasta-2.webp",
+      "img/products/pulseras/pulsera-conchita-negra-rasta-3.webp",
+      "img/products/pulseras/pulsera-conchita-negra-rasta-4.webp"
+    ],
+    "categoria": "ofertas",
+    "oferta": true
+  },
+  {
+    "id": 17,
+    "nombre": "Pulsera Estrellitas Multicolor",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-estellitas-colores-varios-1.webp",
+    "descripcion": "Pulsera con diseño alegre con estrellita en colores vivos.",
+    "precio": 10000,
+    "estrellas": 4.5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera con estrellitas de colores variados y tejido resistente. Ajustable y liviana.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-estellitas-colores-varios-1.webp",
+      "img/products/pulseras/pulsera-estellitas-colores-varios-2.webp",
+      "img/products/pulseras/pulsera-estellitas-colores-varios-3.webp",
+      "img/products/pulseras/pulsera-estellitas-colores-varios-4.webp"
+    ],
+    "categoria": "ofertas",
+    "oferta": true
+  },
+  {
+    "id": 18,
+    "nombre": "Pulsera Estrellita Beige",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-estrellita-beis-cristales-1.webp",
+    "descripcion": "Pulsera en tono beige con estrellita y cristales brillantes.",
+    "precio": 10000,
+    "estrellas": 4.5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Hecha a mano con hilo beige, estrellita plastica y cristales decorativos. Ajustable.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-estrellita-beis-cristales-1.webp",
+      "img/products/pulseras/pulsera-estrellita-beis-cristales-2.webp",
+      "img/products/pulseras/pulsera-estrellita-beis-cristales-3.webp",
+      "img/products/pulseras/pulsera-estrellita-beis-cristales-4.webp"
+    ],
+    "categoria": "ofertas",
+    "oferta": true
+  },
+  {
+    "id": 19,
+    "nombre": "Pulsera Estrellita Blanca Rasta",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-estrellita-blanca-rasta-1.webp",
+    "descripcion": "Pulsera con contraste único entre blanco y tonos rasta y bandera de Colombia, con estrellita central.",
+    "precio": 10000,
+    "estrellas": 4.5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Tejido blanco con estrellita plastica y acentos en colores rasta y bandera colombiana, tejido plano, tecnica macrame. Ajuste suave.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-estrellita-blanca-rasta-1.webp",
+      "img/products/pulseras/pulsera-estrellita-blanca-rasta-2.webp",
+      "img/products/pulseras/pulsera-estrellita-blanca-rasta-3.webp",
+      "img/products/pulseras/pulsera-estrellita-blanca-rasta-4.webp"
+    ],
+    "categoria": "ofertas",
+    "oferta": true
+  },
+  {
+    "id": 20,
+    "nombre": "Pulsera Estrellita Café Cristales",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-estrellita-cafe-cristales-1.webp",
+    "descripcion": "Pulsera con elegancia en tonos tierra con brillo de cristales y estrellita.",
+    "precio": 10000,
+    "estrellas": 4.5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera de macramé café con cristales translúcidos y estrella decorativa. Talla ajustable.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-estrellita-cafe-cristales-1.webp",
+      "img/products/pulseras/pulsera-estrellita-cafe-cristales-2.webp",
+      "img/products/pulseras/pulsera-estrellita-cafe-cristales-3.webp",
+      "img/products/pulseras/pulsera-estrellita-cafe-cristales-4.webp"
+    ],
+    "categoria": "ofertas",
+    "oferta": true
+  },
+  {
+    "id": 21,
+    "nombre": "Pulsera Estrellita Roja Multicolor",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-estrellita-roja-colores-varios-1.webp",
+    "descripcion": "Pulsera estrellita, estilo atrevido con rojo intenso y detalles multicolor.",
+    "precio": 10000,
+    "estrellas": 4.5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera con hilo rojo, estrella plastica y detalles en múltiples colores. Hecha a mano.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-estrellita-roja-colores-varios-1.webp",
+      "img/products/pulseras/pulsera-estrellita-roja-colores-varios-2.webp",
+      "img/products/pulseras/pulsera-estrellita-roja-colores-varios-3.webp",
+      "img/products/pulseras/pulsera-estrellita-roja-colores-varios-4.webp"
+    ],
+    "categoria": "ofertas",
+    "oferta": true
+  },
+  {
+    "id": 22,
+    "nombre": "Pulsera Negra Cristales Pintados",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-negra-cristales-pintados-1.webp",
+    "descripcion": "Pulsera sobria con cristales pintados a mano en tono elegante.",
+    "precio": 10000,
+    "estrellas": 4.5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera negra con cristales pintados en color negro, tejido plano, tecnica macrame. Diseño unisex, cómodo y ajustable.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-negra-cristales-pintados-1.webp",
+      "img/products/pulseras/pulsera-negra-cristales-pintados-2.webp",
+      "img/products/pulseras/pulsera-negra-cristales-pintados-3.webp",
+      "img/products/pulseras/pulsera-negra-cristales-pintados-4.webp"
+    ],
+    "categoria": "ofertas",
+    "oferta": true
+  },
+  {
+    "id": 23,
+    "nombre": "Pulsera Vinotinto Conchita",
+    "marca": "#Macrameaventura",
+    "imagen": "img/products/pulseras/pulsera-vinotingo-conchigta-mar-1.webp",
+    "descripcion": "Pulsera en color vinotinto con conchita inspirada en la brisa marina.",
+    "precio": 10000,
+    "estrellas": 4.5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Pulsera hecha a mano en tono vinotinto con conchita natural. Ideal para un estilo boho y relajado.",
+    "imagenes": [
+      "img/products/pulseras/pulsera-vinotingo-conchigta-mar-1.webp",
+      "img/products/pulseras/pulsera-vinotingo-conchigta-mar-2.webp",
+      "img/products/pulseras/pulsera-vinotingo-conchigta-mar-3.webp",
+      "img/products/pulseras/pulsera-vinotingo-conchigta-mar-4.webp"
+    ],
+    "categoria": "ofertas",
+    "oferta": true
+  },
+  {
+    "id": 24,
+    "nombre": "Estuchera Escolar",
+    "marca": "Estuchera Salvador",
+
+    "imagen": "img/products/accesorios-escritorio/estuchera-utiles-escolares-1.webp",
+    "descripcion": "Estuchera compacta y resistente, perfecta para organizar útiles escolares y mantener todo en su lugar.",
+    "precio": 25000,
+    "estrellas": 4,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Fabricada con materiales de alta durabilidad y fácil limpieza. Costuras reforzadas para mayor resistencia. Diseño compacto y ligero, ideal para transporte diario. Incluye cierres de alta calidad para asegurar su contenido. Medidas: 20cm x 10cm x 5cm. Capacidad: 1.5L. Colores disponibles: azul, rojo y verde.",
+    "imagenes": [
+      "img/products/accesorios-escritorio/estuchera-utiles-escolares-5.webp",
+      "img/products/accesorios-escritorio/estuchera-utiles-escolares-2.webp",
+      "img/products/accesorios-escritorio/estuchera-utiles-escolares-3.webp",
+      "img/products/accesorios-escritorio/estuchera-utiles-escolares-4.webp"
+    ],
+    "categoria": "coleccion",
+    "oferta": false
+  },
+  {
+    "id": 25,
+    "nombre": "Morral 10L",
+    "marca": "Quechua",
+
+    "imagen": "img/products/mochilas/morral-10l-de-senderismo-nh-arpenaz-100-amarillo-1.webp",
+    "descripcion": "Morral pequeño de 10 litros para senderismo Quechua NH100 amarillo",
+    "precio": 50000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Este morral asegura comodidad con correas ajustables y almohadillas acolchadas, además de tela ventilada para una mejor transpiración. Ofrece amplio espacio de guardado con un compartimento grande, bolsillos con cremallera y un bolsillo lateral de malla para accesorios como cantimploras. Aunque es repelente al agua para lloviznas, no es completamente impermeable; se recomienda una funda de lluvia para mayor protección. Su construcción resistente, probada en laboratorio y campo, y una garantía de 10 años respaldan su calidad y durabilidad.",
+    "imagenes": [
+      "img/products/mochilas/morral-10l-de-senderismo-nh-arpenaz-100-amarillo-2.webp",
+      "img/products/mochilas/morral-10l-de-senderismo-nh-arpenaz-100-amarillo-3.webp",
+      "img/products/mochilas/morral-10l-de-senderismo-nh-arpenaz-100-amarillo-4.webp",
+      "img/products/mochilas/morral-10l-de-senderismo-nh-arpenaz-100-amarillo-5.webp"
+    ],
+    "categoria": "coleccion",
+    "oferta": false
+  },
+  {
+    "id": 26,
+    "nombre": "GoPro HERO10",
+    "marca": "GoPro",
+
+    "imagen": "img/products/audifonos-dispositivos/gopro-hero10-black-6.webp",
+    "descripcion": "GoPro HERO10 Black, Segunda mano, 5.3K, es sumergible y tiene estabilización avanzada.",
+    "precio": 930000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: La HERO10 Black es una cámara de alto rendimiento con el procesador GP2, que permite capturar fotos de 23 MP y vídeos en 5,3K60 o 4K120. Ofrece estabilización HyperSmooth 4.0, mejor rendimiento con poca luz, es sumergible hasta 10 m y carga contenido automáticamente a la nube al conectarla. Ideal para máxima velocidad y facilidad de uso, con pantalla táctil trasera y frontal. Incluye conectividad Wi-Fi y Bluetooth, y es compatible con una amplia gama de accesorios GoPro.",
+    "imagenes": [
+      "img/products/audifonos-dispositivos/gopro-hero10-black-1.webp",
+      "img/products/audifonos-dispositivos/gopro-hero10-black-5.webp",
+      "img/products/audifonos-dispositivos/gopro-hero10-black-2.webp",
+      "img/products/audifonos-dispositivos/gopro-hero10-black-3.webp",
+      "img/products/audifonos-dispositivos/gopro-hero10-black-4.webp"
+    ],
+    "categoria": "coleccion",
+    "oferta": false
+  },
+  {
+    "id": 27,
+    "nombre": "Set de Arte 145pzs",
+    "marca": "Generica",
+
+    "imagen": "img/products/accesorios-escritorio/kit-colores-marcadores.webp",
+    "descripcion": "Set de arte para niños con 145 piezas, ideal para desarrollar la creatividad y habilidades artísticas.",
+    "precio": 80000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Este set de arte incluye 145 piezas de alta calidad, como lápices de colores, acuarelas, marcadores y herramientas de dibujo. Viene en un maletín de aluminio resistente y ligero, facilitando su transporte y organización. Ideal para niños y principiantes, fomenta la creatividad y el aprendizaje artístico. Las piezas son no tóxicas y seguras para el uso infantil. Medidas del maletín: 30cm x 20cm x 5cm.",
+    "imagenes": [
+      "img/products/accesorios-escritorio/kit-colores-marcadores-1.webp",
+      "img/products/accesorios-escritorio/kit-colores-marcadores-2.webp",
+      "img/products/accesorios-escritorio/kit-colores-marcadores-3.webp",
+      "img/products/accesorios-escritorio/kit-colores-marcadores-4.webp",
+      "img/products/accesorios-escritorio/kit-colores-marcadores-6.webp"
+    ],
+    "categoria": "coleccion",
+    "oferta": false
+  },
+  {
+    "id": 28,
+    "nombre": "Lámpara Escritorio",
+    "marca": "Generica",
+
+    "imagen": "img/products/accesorios-escritorio/lampara-escritorio-3.webp",
+    "descripcion": "Lámpara de mesa con brazo flexible, ideal para escritorio y lectura.",
+    "precio": 70000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Lámpara de escritorio con tres brazos articulados, perfecta para lectura, oficina o mesilla de noche. Su diseño retro combina un estilo industrial con muelles flexibles de acero y una pantalla de metal, ofreciendo un toque clásico y funcional. Es ajustable, lo que garantiza siempre una iluminación óptima en la zona de trabajo. Dimensiones: 50x27x15 cm, casquillo E27, con capacidad máxima de 40W. Incluye cable eléctrico con interruptor. Garantía de 30 días por defectos de fábrica; no aplica para daños causados por golpes, agua, roturas o mal uso.",
+    "imagenes": [
+      "img/products/accesorios-escritorio/lampara-escritorio-1.webp",
+      "img/products/accesorios-escritorio/lampara-escritorio-2.webp",
+      "img/products/accesorios-escritorio/lampara-escritorio-3.webp"
+    ],
+    "categoria": "coleccion",
+    "oferta": false
+  },
+  {
+    "id": 29,
+    "nombre": "Tira LED 20m RGB",
+    "marca": "Generica",
+
+    "imagen": "img/products/accesorios-escritorio/tira-de-led-1.webp",
+    "descripcion": "Tira de LED RGB5050 de 20m, controlable por voz y compatible con Alexa.",
+    "precio": 170000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Tiras LED de alta calidad 5050 con 16 millones de colores, ideales para personalizar y decorar habitaciones, salones, fiestas, bares y eventos especiales como Navidad y Halloween. Compatible con Alexa y Google Assistant para control por voz, también incluye un mando a distancia de 44 teclas. Permite el control a través de la app «Magic Home» en tu smartphone para ajustar brillo, colores y modos desde cualquier lugar. Fácil instalación con adaptador de CA y receptor de control remoto. Paquete completo: 2 tiras LED de 10 m, adaptador WIFI, mando y conectores. Garantía de atención al cliente rápida en 24 horas. ¡Perfectas para crear ambientes únicos!",
+    "imagenes": [
+      "img/products/accesorios-escritorio/tira-de-led-2.webp",
+      "img/products/accesorios-escritorio/tira-de-led-3.webp",
+      "img/products/accesorios-escritorio/tira-de-led-4.webp",
+      "img/products/accesorios-escritorio/tira-de-led-5.webp"
+    ],
+    "categoria": "coleccion",
+    "oferta": false
+  },
+  {
+    "id": 30,
+    "nombre": "Toalla Microfibra XL",
+    "marca": "NABAIJI",
+
+    "imagen": "img/products/chanclas-toallas/toalla-microfibra-talla-xl-110-x-175-cm-natacion-nabaiji-1.webp",
+    "descripcion": "Toalla de microfibra de talla-xl-110-x-175-cm, ideal para natación y deportes acuáticos.",
+    "precio": 75000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Toalla de microfibra de gran tamaño (110 x 175 cm) ideal para natación y deportes acuáticos. Su material de microfibra es ligero, compacto y de secado rápido, facilitando su transporte y uso. La toalla es suave al tacto y altamente absorbente, perfecta para secar el cuerpo después de nadar. Además, es fácil de lavar y mantener, siendo resistente a múltiples lavados. Ideal para llevar en la mochila o maleta de deporte.",
+    "imagenes": [
+      "img/products/chanclas-toallas/toalla-microfibra-talla-xl-110-x-175-cm-natacion-nabaiji-1.webp",
+      "img/products/chanclas-toallas/toalla-microfibra-talla-xl-110-x-175-cm-natacion-nabaiji-2.webp",
+      "img/products/chanclas-toallas/toalla-microfibra-talla-xl-110-x-175-cm-natacion-nabaiji-3.webp",
+      "img/products/chanclas-toallas/toalla-microfibra-talla-xl-110-x-175-cm-natacion-nabaiji-4.webp"
+    ],
+    "categoria": "coleccion",
+    "oferta": false
+  },
+  {
+    "id": 31,
+    "nombre": "Gorra Trekking",
+    "marca": "FORCLAZ",
+
+    "imagen": "img/products/gorras/gorra-trekking-viaje-travel-100-gris-claro (1).webp",
+    "descripcion": "Gorra secado rápido de trekking para Adulto Forclaz Travel 100 azul marino",
+    "precio": 45000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Gorra de trekking Travel 100, diseñada para adultos, fabricada con un tejido ligero y transpirable que permite un secado rápido. Ideal para actividades al aire libre como senderismo y viajes. Su diseño incluye una visera amplia para proteger del sol y un ajuste trasero para mayor comodidad. Disponible en color azul marino, es fácil de llevar y almacenar. Medidas: talla única ajustable.",
+    "imagenes": [
+      "img/products/gorras/gorra-trekking-viaje-travel-100-gris-claro (1).webp",
+      "img/products/gorras/gorra-trekking-viaje-travel-100-gris-claro (2).webp",
+      "img/products/gorras/gorra-trekking-viaje-travel-100-gris-claro (3).webp",
+      "img/products/gorras/gorra-trekking-viaje-travel-100-gris-claro (4).webp"
+    ],
+    "categoria": "coleccion",
+    "oferta": false
+  },
+  {
+    "id": 32,
+    "nombre": "Audífonos JBL T110",
+    "marca": "JBL",
+    "imagen": "img/products/audifonos-dispositivos/audifonos-jbl-t110-in-ear-negro-color-black-5.webp",
+    "descripcion": "Audífonos JBL T110 In-Ear con sonido Pure Bass y diseño antienredo. Con control y micrófono. ",
+    "precio": 50000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Los audífonos JBL T110 ofrecen sonido Pure Bass para una experiencia auditiva de calidad. Cuentan con un control remoto de un botón y micrófono integrado, cable plano antienredos y conector de 3.5 mm. Unidad dinámica de 9 mm con un rango de frecuencias de 20 Hz a 20 kHz. Peso del paquete: 0.06 kg, color negro, modelo T110. Codificados como EAN/GTIN: 6925281949807, MPN: JBLT110BLKAM, SKU: MM900JBL26. Compactos y funcionales.",
+    "imagenes": [
+      "img/products/audifonos-dispositivos/audifonos-jbl-t110-in-ear-negro-color-black-1.webp",
+      "img/products/audifonos-dispositivos/audifonos-jbl-t110-in-ear-negro-color-black-2.webp",
+      "img/products/audifonos-dispositivos/audifonos-jbl-t110-in-ear-negro-color-black-3.webp",
+      "img/products/audifonos-dispositivos/audifonos-jbl-t110-in-ear-negro-color-black-4.webp"
+    ],
+    "categoria": "coleccion",
+    "oferta": false
+  },
+  {
+    "id": 33,
+    "nombre": "GoPro HERO11",
+    "marca": "GoPro",
+    "imagen": "img/products/audifonos-dispositivos/gopro-hero11-black-1.webp",
+    "descripcion": "GoPro HERO11 Black segunda mano, resolución 5,3K60 + 4K120, estabilización HyperSmooth 5.0 y sensor avanzado.",
+    "precio": 1150000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: La HERO11 Black es la cámara más versátil de GoPro, con un nuevo sensor de imagen más grande para capturar vídeos en 5,3K60 y fotos de 27 MP con calidad excepcional. Incluye estabilización HyperSmooth 5.0 con Bloqueo del horizonte, efectos nocturnos y color de 10 bits. Es sumergible hasta 10 m y permite subir contenido automáticamente a la nube.",
+    "imagenes": [
+      "img/products/audifonos-dispositivos/gopro-hero11-black-1.webp",
+      "img/products/audifonos-dispositivos/gopro-hero11-black-3.webp",
+      "img/products/audifonos-dispositivos/gopro-hero11-black-4.webp",
+      "img/products/audifonos-dispositivos/gopro-hero11-black-5.webp"
+    ],
+    "categoria": "coleccion",
+    "oferta": false
+  },
+  {
+    "id": 34,
+    "nombre": "Parlante JBL 5",
+    "marca": "JBL",
+
+    "imagen": "img/products/audifonos-dispositivos/parlante-jbl-charge-5-5.webp",
+    "descripcion": "Parlante JBL Charge 5 JBLCHARGE5 portátil con bluetooth waterproof black 110V",
+    "precio": 725000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: El JBL Charge 5 es un parlante portátil con Bluetooth, resistente al agua y al polvo (IP67), ideal para llevar a cualquier lugar. Ofrece un sonido potente y claro, con una batería de larga duración que permite reproducir música durante horas. Su diseño elegante y compacto lo hace fácil de transportar. Compatible con dispositivos móviles y tablets, cuenta con un puerto USB para cargar otros dispositivos. Ideal para fiestas, actividades al aire libre o simplemente disfrutar de tu música favorita.",
+    "imagenes": [
+      "img/products/audifonos-dispositivos/parlante-jbl-charge-5-1.webp",
+      "img/products/audifonos-dispositivos/parlante-jbl-charge-5-2.webp",
+      "img/products/audifonos-dispositivos/parlante-jbl-charge-5-3.webp",
+      "img/products/audifonos-dispositivos/parlante-jbl-charge-5-4.webp"
+    ],
+    "categoria": "coleccion",
+    "oferta": false
+  },
+  {
+    "id": 35,
+    "nombre": "Riñonera de viaje",
+    "marca": "FORCLAZ",
+    "imagen": "img/products/mochilas/rinonera-travel-2l-negro-4.webp",
+    "descripcion": "Riñonera de viaje 2 litros para senderismo y trekking Forclaz negro.",
+    "precio": 65000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: INFORMACIÓN TÉCNICA: Producto compacto y ligero (36 cm x 12 cm x 10 cm; 100 g), ideal para organizar tus objetos esenciales. Cuenta con dos compartimentos, uno principal con portallaves y otro secundario, ambos hechos con tejido resistente (100% poliéster y revestimiento de poliuretano). Su diseño práctico y durable lo convierte en un accesorio funcional para llevar a cualquier lugar. Fácil de limpiar con lavado a mano (máx. 40°C) y con garantía de 2 años. Perfecto para quienes buscan combinar utilidad con estilo.",
+    "imagenes": [
+      "img/products/mochilas/rinonera-travel-2l-negro-1.webp",
+      "img/products/mochilas/rinonera-travel-2l-negro-2.webp",
+      "img/products/mochilas/rinonera-travel-2l-negro-3.webp",
+      "img/products/mochilas/rinonera-travel-2l-negro-4.webp"
+    ],
+    "categoria": "coleccion",
+    "oferta": false
+  },
+  {
+    "id": 36,
+    "nombre": "Reloj con cronómetro",
+    "marca": "DECATHLON",
+    "imagen": "img/products/audifonos-dispositivos/reloj-para-nino-y-adulto-con-cronometro-atw100-s-negro-1.webp",
+    "descripcion": "Reloj con cronómetro de Running Kalenji w100 negro",
+    "precio": 70000,
+    "estrellas": 5,
+    "info_tecnica": "INFORMACIÓN TÉCNICA: Este reloj deportivo es ideal para acompañarte en tus actividades. Su cronómetro preciso mide desde 1 segundo hasta 99 horas, ayudándote a seguir tus marcas personales. La pantalla con números grandes permite consultar tus tiempos fácilmente durante el ejercicio. Resistente al agua hasta 5 ATM, es apto para nadar en superficie (como en piscinas o mar) y también se puede usar bajo la ducha. Además, incluye una función de tiempo intermedio para medir tu progreso en distancias específicas. Fabricado en China, combina funcionalidad y durabilidad para todo tipo de entrenamientos.",
+    "imagenes": [
+      "img/products/audifonos-dispositivos/reloj-para-nino-y-adulto-con-cronometro-atw100-s-negro-1.webp",
+      "img/products/audifonos-dispositivos/reloj-para-nino-y-adulto-con-cronometro-atw100-s-negro-2.webp",
+      "img/products/audifonos-dispositivos/reloj-para-nino-y-adulto-con-cronometro-atw100-s-negro-3.webp",
+      "img/products/audifonos-dispositivos/reloj-para-nino-y-adulto-con-cronometro-atw100-s-negro-4.webp"
+    ],
+    "categoria": "coleccion",
+    "oferta": false
+  }
+]
