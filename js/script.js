@@ -20,44 +20,126 @@ close.addEventListener('click', function () {
   menu.classList.remove('active');
 });
 
-//📌 Productos - Carga de productos
-// Carga los productos desde el archivo JSON y los muestra en la página principal.
+//📌 Productos - Carga paginada (lazy load) de productos en home / shop
+// Renderiza en batches de PAGE_SIZE para no inyectar el catálogo completo en
+// el primer paint. Usa IntersectionObserver sobre un sentinel al final del
+// grid para autocargar al hacer scroll, con botón "Cargar más" como fallback
+// accesible (teclado / JS limitado / observer no disparado).
+//
+// Nota: esta función se mantiene aislada para facilitar el split a módulo
+// dedicado en la sub-tarea 2.3 del ticket FRONTEND-FASE-2.
+const PAGE_SIZE = 24;
+
+function renderProductoCard(product, { eager = false } = {}) {
+  // La primera imagen del primer batch carga eager para no penalizar el LCP
+  // (best practice Lighthouse: above-the-fold no debe ser loading="lazy").
+  const loadingAttr = eager ? 'eager' : 'lazy';
+  const fetchAttr = eager ? ' fetchpriority="high"' : '';
+  return `
+    <div class="pro" onclick="window.location.href='product.html?id=${product.id}'">
+      <img src="${product.imagen}" alt="${product.nombre}" loading="${loadingAttr}" decoding="async"${fetchAttr} />
+      <div class="des">
+        <span>${product.marca}</span>
+        <h5>${product.descripcion}</h5>
+        <div class="star">
+${renderEstrellas(product.estrellas)}
+</div>
+
+        <h4>$${product.precio.toLocaleString()} Pesos</h4>
+      </div>
+      <a href="#" aria-label="Agregar ${product.nombre} al carrito"><i class="fal fa-shopping-cart cart" aria-hidden="true"></i></a>
+    </div>
+  `;
+}
+
+function inicializarPaginacionProductos(productos, productContainer) {
+  let renderedCount = 0;
+  const total = productos.length;
+
+  // Sentinel + botón "Cargar más" — viven fuera del .pro-container para no
+  // romper el flex-wrap del grid.
+  const grid = productContainer;
+  const parent = grid.parentElement || grid;
+
+  const loadMoreWrapper = document.createElement('div');
+  loadMoreWrapper.className = 'pro-load-more';
+  loadMoreWrapper.innerHTML = `
+    <button type="button" class="pro-load-more__btn" hidden>Cargar más productos</button>
+    <div class="pro-load-more__sentinel" aria-hidden="true"></div>
+    <p class="pro-load-more__status" role="status" aria-live="polite"></p>
+  `;
+  parent.insertBefore(loadMoreWrapper, grid.nextSibling);
+
+  const btn = loadMoreWrapper.querySelector('.pro-load-more__btn');
+  const sentinel = loadMoreWrapper.querySelector('.pro-load-more__sentinel');
+  const status = loadMoreWrapper.querySelector('.pro-load-more__status');
+
+  function renderNextBatch() {
+    if (renderedCount >= total) return;
+
+    const start = renderedCount;
+    const end = Math.min(start + PAGE_SIZE, total);
+    const fragmentHTML = productos
+      .slice(start, end)
+      .map((p, i) =>
+        renderProductoCard(p, { eager: start === 0 && i === 0 })
+      )
+      .join('');
+
+    // appendChild a un wrapper temporal es ~10x más rápido que innerHTML +=
+    // en loop (evita reflow/reparse por cada producto).
+    const tmp = document.createElement('div');
+    tmp.innerHTML = fragmentHTML;
+    const frag = document.createDocumentFragment();
+    while (tmp.firstChild) frag.appendChild(tmp.firstChild);
+    grid.appendChild(frag);
+
+    renderedCount = end;
+    status.textContent = `Mostrando ${renderedCount} de ${total} productos`;
+
+    if (renderedCount >= total) {
+      btn.hidden = true;
+      observer && observer.disconnect();
+      sentinel.remove();
+    } else {
+      btn.hidden = false;
+    }
+  }
+
+  // Autocarga con IntersectionObserver. Fallback al botón si la API no existe
+  // (IE / entornos exóticos) — el botón siempre funciona como degradación.
+  let observer = null;
+  if ('IntersectionObserver' in window) {
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) renderNextBatch();
+        });
+      },
+      { rootMargin: '300px 0px' } // precarga 300px antes de llegar al final
+    );
+    observer.observe(sentinel);
+  }
+
+  btn.addEventListener('click', renderNextBatch);
+
+  // Primer batch
+  renderNextBatch();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  const productContainer = document.querySelector('.pro-container');
+
+  // 🛡️ Solo continuar si existe .pro-container (no aplica en product.html, etc).
+  if (!productContainer) {
+    return;
+  }
+
   fetch('productos.json')
     .then((response) => response.json())
     .then((data) => {
-      const productContainer = document.querySelector('.pro-container');
-
-      // 🛡️ Verificación: solo continuar si existe .pro-container
-      if (!productContainer) {
-        console.warn(
-          '⚠️ No se encontró .pro-container en esta página. Se omite la carga de productos.'
-        );
-        return;
-      }
-
       productContainer.innerHTML = ''; // Limpiar productos existentes
-
-      data.forEach((product) => {
-        const productHTML = `
-          <div class="pro" onclick="window.location.href='product.html?id=${
-            product.id
-          }'">
-            <img src="${product.imagen}" alt="${product.nombre}" />
-            <div class="des">
-              <span>${product.marca}</span>
-              <h5>${product.descripcion}</h5>
-              <div class="star">
-  ${renderEstrellas(product.estrellas)}
-</div>
-
-              <h4>$${product.precio.toLocaleString()} Pesos</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-          </div>
-        `;
-        productContainer.innerHTML += productHTML;
-      });
+      inicializarPaginacionProductos(data, productContainer);
     })
     .catch((error) => console.error('Error al cargar los productos:', error));
 });
