@@ -2308,4 +2308,320 @@ footer .copyright {
   margin: 0;
 }
 
+/* ============================================================
+   DARK MODE OVERRIDES (OS-level vía prefers-color-scheme)
+   ------------------------------------------------------------
+   Activado por el SO. Sin toggle manual (Fase 3).
+
+   Por qué un bloque al final: el CSS legacy de este archivo usa
+   primitivos (--ink-900, --ink-50, --white) como si fueran
+   semánticos (text, bg, surface) en muchos selectores. Como los
+   primitivos NO se tocan (regla del design system), aquí pisamos
+   los selectores específicos cuyo color hardcoded queda mal en
+   dark. Esto deja la deuda fase-1 visible y atacable en otra
+   iteración, sin reescribir style.css completo.
+
+   Selectores intencionalmente NO tocados:
+   - #banner, #sm-banner, #page-header.*-header, .section-banner__box:
+     todos tienen imagen de fondo → texto blanco hardcoded SIEMPRE
+     legible. Light y dark se ven igual ahí (es intencional).
+   - .whatsapp-fab: color de marca externa (--whatsapp). No tocar.
+   - .cart-count: badge rojo sobre cualquier fondo. Visible en ambos
+     modos. Deuda menor (no usa token), no es bloqueante.
+   - #newslatter: ya tiene fondo --ink-900 hardcoded. En dark
+     pierde contraste contra el body bg, pero sigue siendo legible
+     y mantiene la misma estética. Lo dejamos.
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  /* Base */
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  /* Tipografía base */
+  h1, h2, h3 {
+    color: var(--color-foreground);
+  }
+
+  h4, h5, h6 {
+    color: var(--color-foreground);
+  }
+
+  p {
+    color: var(--color-secondary);
+  }
+
+  /* Header / Nav */
+  #header {
+    background: var(--color-background);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.45);
+  }
+
+  #navbar li a {
+    color: var(--color-foreground);
+  }
+
+  #navbar li a:hover,
+  #navbar li a.active {
+    color: var(--color-accent);
+  }
+
+  #navbar li a.active::after,
+  #navbar li a:hover::after {
+    background: var(--color-accent);
+  }
+
+  #user-menu .dropdown-toggle {
+    color: var(--color-foreground);
+  }
+
+  #user-menu .dropdown-toggle:hover {
+    color: var(--color-accent);
+  }
+
+  #user-menu .dropdown-menu {
+    background: var(--color-surface);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.55);
+  }
+
+  #user-menu .dropdown-menu a {
+    color: var(--color-foreground);
+  }
+
+  #user-menu .dropdown-menu a:hover {
+    background: var(--ink-700);
+    color: var(--color-accent);
+  }
+
+  /* Mobile nav drawer */
+  #navbar {
+    /* aplica solo cuando el drawer está en mobile (la media query
+       padre lo hace fixed); en desktop este background no se ve */
+    background-color: var(--color-background);
+  }
+
+  #mobile i,
+  #close {
+    color: var(--color-foreground);
+  }
+
+  /* Hero */
+  #hero {
+    background-color: var(--color-background);
+  }
+
+  #hero .hero-eyebrow {
+    color: var(--color-accent);
+  }
+
+  #hero h1 {
+    color: var(--color-accent);
+  }
+
+  #hero .hero-subtitle {
+    color: var(--color-foreground);
+  }
+
+  #hero button {
+    color: var(--color-accent);
+  }
+
+  #hero button:hover {
+    color: var(--color-foreground);
+  }
+
+  /* Feature cards (chips) */
+  #feature .fe-box {
+    border-color: var(--color-border);
+    background: var(--color-surface);
+  }
+
+  #feature .fe-box h6,
+  #feature .fe-box:nth-child(2) h6,
+  #feature .fe-box:nth-child(3) h6,
+  #feature .fe-box:nth-child(4) h6,
+  #feature .fe-box:nth-child(5) h6,
+  #feature .fe-box:nth-child(6) h6 {
+    background-color: var(--ink-700);
+    color: var(--color-accent);
+  }
+
+  /* Product cards */
+  #product1 .pro {
+    border-color: var(--color-border);
+    background: var(--color-surface);
+  }
+
+  #product1 .pro .des span {
+    color: var(--color-muted);
+  }
+
+  #product1 .pro .des h5 {
+    color: var(--color-foreground);
+  }
+
+  #product1 .pro .des h4 {
+    color: var(--color-accent);
+  }
+
+  #product1 .pro .cart {
+    background-color: var(--ink-700);
+    color: var(--color-accent);
+    border-color: var(--color-border);
+  }
+
+  /* Newslatter — preservamos el ink-900 hardcoded (idéntico al light);
+     solo subimos el contraste del texto secundario para que se lea. */
+  #newslatter p {
+    color: var(--ink-300);
+  }
+
+  #newslatter input {
+    background: var(--color-surface);
+    color: var(--color-foreground);
+    border-color: var(--color-border);
+  }
+
+  /* Footer */
+  footer a {
+    color: var(--color-foreground);
+  }
+
+  footer .follow i {
+    color: var(--color-secondary);
+  }
+
+  footer .follow i:hover,
+  footer a:hover {
+    color: var(--color-accent);
+  }
+
+  /* Blog */
+  #blog .blog-details a {
+    color: var(--color-foreground);
+  }
+
+  #blog .blog-details a::after {
+    background-color: var(--color-foreground);
+  }
+
+  #blog .blog-details a:hover,
+  #blog .blog-details a:hover::after {
+    color: var(--color-accent);
+    background-color: var(--color-accent);
+  }
+
+  #blog .blog-box h1 {
+    color: var(--ink-700);
+  }
+
+  /* Forms (contact + cart coupon) */
+  #form-details {
+    border-color: var(--color-border);
+  }
+
+  #form-details form input,
+  #form-details form textarea {
+    background: var(--color-surface);
+    color: var(--color-foreground);
+    border-color: var(--color-border);
+  }
+
+  #form-details .people div p span {
+    color: var(--color-foreground);
+  }
+
+  /* Cart */
+  #cart table thead {
+    border-color: var(--color-border);
+  }
+
+  #coupun input {
+    background: var(--color-surface);
+    color: var(--color-foreground);
+    border-color: var(--color-border);
+  }
+
+  #subtotal {
+    border-color: var(--color-border);
+  }
+
+  #subtotal table td {
+    border-color: var(--color-border);
+  }
+
+  /* Single product */
+  #prodetails .simgle-pro-details select,
+  #prodetails .simgle-pro-details input {
+    background: var(--color-surface);
+    color: var(--color-foreground);
+    border: 1px solid var(--color-border);
+  }
+
+  /* Generic buttons (button.normal usa --white de bg en light) */
+  button.normal {
+    background-color: var(--color-surface);
+    color: var(--color-foreground);
+  }
+
+  /* Auth page: el video de fondo cubre todo. El cuadro glass-like
+     necesita ser oscuro translúcido para que el texto blanco se lea.
+     (En light, era blanco translúcido con texto ink-900.) */
+  #auth-section {
+    background: rgba(12, 10, 9, 0.55);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  #auth-section h2 {
+    color: var(--color-foreground);
+  }
+
+  /* Lazy load button: hover en light pisaba a ink-900 (oscuro) — en
+     dark eso se confunde con el fondo. Invertimos a ink-50/foreground. */
+  .pro-load-more__btn:hover,
+  .pro-load-more__btn:focus-visible {
+    background-color: var(--color-foreground);
+    border-color: var(--color-foreground);
+    color: var(--color-background);
+  }
+
+  /* Colecciones / Ofertas (css/colecciones.css overrides) */
+  .info-highlight {
+    background-color: var(--color-surface);
+    color: var(--color-secondary);
+  }
+
+  .info-highlight--light {
+    background-color: var(--ink-700);
+  }
+
+  .coleccion-grid .pro {
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+  }
+
+  .coleccion-grid .pro .des span {
+    color: var(--color-muted);
+  }
+
+  .coleccion-grid .pro .des h5 {
+    color: var(--color-foreground);
+  }
+
+  .coleccion-grid .pro .des h4 {
+    color: var(--color-accent);
+  }
+
+  .cart-coleccion {
+    background-color: var(--ink-700);
+    color: var(--color-accent);
+    border-color: var(--color-border);
+  }
+
+  .cart-coleccion i {
+    color: var(--color-accent);
+  }
+}
+
 /* 🎯 Media Queries - WhatsApp*/
