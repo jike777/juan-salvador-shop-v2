@@ -23,12 +23,12 @@
 }
 
 #coleccion-banner {
-    background-image: url("img/banner/juliana-beso-juan.webp");
+    background-image: url("../img/banner/juliana-beso-juan.webp");
 
 }
 
 #ofertas-banner {
-    background-image: url("img/banner/juan-tesoro-banner.webp");
+    background-image: url("../img/banner/juan-tesoro-banner.webp");
 }
 
 #coleccion-banner h2 span,

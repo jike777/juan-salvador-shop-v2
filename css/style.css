@@ -332,7 +332,7 @@ button.white {
 /* Home Page */
 
 #hero {
-  background-image: url("img/home/hero5.webp");
+  background-image: url("../img/home/hero5.webp");
   height: 90vh;
   width: 100%;
   background-size: contain;
@@ -346,16 +346,42 @@ button.white {
   justify-content: center;
 }
 
-#hero h4 {
-  padding-bottom: 15px;
+/* Eyebrow: pequeño label en mayúsculas que reemplaza al h4 del hero
+   (manteniendo jerarquía h1-first sin sacrificar diseño). */
+#hero .hero-eyebrow {
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-700);
+  margin: 0 0 var(--s-3) 0;
+  padding: 0;
 }
 
 #hero h1 {
-  color: var(--gold-600)
+  color: var(--gold-600);
+  margin: 0;
+}
+
+/* Subtitle: reemplaza al h2 del hero, mantiene el peso visual sin romper
+   la jerarquía de headings (que ya tiene h1 arriba). */
+#hero .hero-subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: var(--ink-900);
+  margin: var(--s-2) 0 var(--s-4) 0;
+  padding: 0;
+}
+
+#hero .hero-lede {
+  max-width: 36rem;
 }
 
 #hero button {
-  background-image: url("img/home/button.webp");
+  background-image: url("../img/home/button.webp");
   background-color: transparent;
   color: var(--gold-600);
   border: 0;
@@ -510,7 +536,7 @@ button.white {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url(img/banner/b2.webp);
+  background-image: url(../img/banner/b2.webp);
   width: 100%;
   height: 40vh;
   border-radius: 1%;
@@ -540,18 +566,10 @@ button.white {
 }
 
 #sm-banner {
-  /*display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-  /* Adds space between the two banners */
-  /*padding: 20px;
-  /* Adds padding to the entire section */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0 20px;
-
 }
 
 #sm-banner .banner-box {
@@ -559,7 +577,7 @@ button.white {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-image: url('img/banner/b17.webp');
+  background-image: url('../img/banner/b17.webp');
   background-color: var(--ink-100);
   /* Fallback color mientras carga */
   background-size: cover;
@@ -581,7 +599,7 @@ button.white {
 
 
 #sm-banner .banner-box2 {
-  background-image: url(img/banner/b10_3_.webp);
+  background-image: url(../img/banner/b10_3_.webp);
 }
 
 #sm-banner h4 {
@@ -669,17 +687,17 @@ button.white {
 /* 🎨 Modificadores con diferentes fondos */
 /* 🔷 Banner 1: Colecciones Nuevas */
 .section-banner__box--1 {
-  background-image: url('img/banner/b4.webp');
+  background-image: url('../img/banner/b4.webp');
 }
 
 /* 🔶 Banner 2: Chaquetas */
 .section-banner__box--2 {
-  background-image: url('img/banner/sagrada-familia.webp');
+  background-image: url('../img/banner/sagrada-familia.webp');
 }
 
 /* 🟢 Banner 3: Edición bebes */
 .section-banner__box--3 {
-  background-image: url('img/banner/juan-banner\ .webp');
+  background-image: url('../img/banner/juan-banner\ .webp');
 }
 
 /* 📝 Título principal del banner */
@@ -709,7 +727,7 @@ button.white {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  background-image: url("img/banner/b14.webp");
+  background-image: url("../img/banner/b14.webp");
   background-repeat: no-repeat;
   background-position: 20% 30%;
   background-color: var(--ink-900);
@@ -978,7 +996,7 @@ footer .copyright {
 /* Blog page */
 
 #page-header.blog-header {
-  background-image: url("img/banner/b19.webp");
+  background-image: url("../img/banner/b19.webp");
   background-size: 100%;
   width: 100%;
   height: 300px;
@@ -1061,7 +1079,7 @@ footer .copyright {
 
 /* Estilo específico solo para el about */
 #page-header.about-header {
-  background-image: url("img/banner/about-banner.webp");
+  background-image: url("../img/banner/about-banner.webp");
   background-size: cover;
   background-position: center;
 
@@ -1132,7 +1150,7 @@ footer .copyright {
 
 /* Imagen solo para CONTACT */
 #page-header.contact-header {
-  background-image: url("img/banner/contact-banner.webp");
+  background-image: url("../img/banner/contact-banner.webp");
   background-size: cover;
   background-position: center;
 
@@ -1282,7 +1300,7 @@ footer .copyright {
 /* CART PAGE*/
 
 #page-header.cart-header {
-  background-image: url("img/banner/cart-banner.webp");
+  background-image: url("../img/banner/cart-banner.webp");
   background-size: cover;
   background-position: center;
 
@@ -2088,7 +2106,7 @@ footer .copyright {
 /* @media Blog header image*/
 
 #page-header.blog-header {
-  background-image: url("img/banner/b19.webp");
+  background-image: url("../img/banner/b19.webp");
   background-size: cover;
   background-position: center;
 

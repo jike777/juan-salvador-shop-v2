@@ -32,20 +32,20 @@
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     />
-    <link rel="stylesheet" href="tokens.css">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/style.css" />
   
     <!-- Structured Data: Product (genérico; products inyectados vía JS — actualizar dinámicamente) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Product",
-      "name": "Producto Juan Salvador''s Shop",
+      "name": "Producto Juan Salvador’s Shop",
       "image": "https://jike777.github.io/juan-salvador-shop-v2/img/home/logo3.webp",
-      "description": "Productos de la colección Juan Salvador''s Shop",
+      "description": "Productos de la colección Juan Salvador’s Shop",
       "brand": {
         "@type": "Brand",
-        "name": "Juan Salvador''s Shop"
+        "name": "Juan Salvador’s Shop"
       },
       "offers": {
         "@type": "AggregateOffer",
@@ -222,12 +222,12 @@
         <p>© 2023. Tienda Juan Salvador Cortes Rodriguez</p>
       </div>
     </footer>
-    <script type="module" src="product.js"></script>
+    <script type="module" src="js/product.js"></script>
     <!-- ✅ Script principal (Es módulo, `type="module"`) -->
-    <script type="module" src="script.js"></script>
+    <script type="module" src="js/script.js"></script>
     <!-- ✅ Script de Firebase (No es módulo, usa `defer`) -->
 
-    <script src="whatsapp-fab.js" defer></script>
+    <script src="js/whatsapp-fab.js" defer></script>
     <!-- ✅ Botón flotante de WhatsApp (NO módulo, pero no necesita defer si va al final) -->
   </body>
 </html>

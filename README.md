@@ -1,213 +1,194 @@
-<p align="center">
-   <a href="https://github.com/jike777/html-css-portafolio2">
-       <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
-   </a>
-</p>
+# Juan Salvador's Shop — v2
 
-<p align="center">
-   <img src="https://github.com/user-attachments/assets/cb6cee9b-bd98-41d9-bc62-e657622644bd" alt="Foto de la tienda Juan Salvador">
-</p>
+> Rebuild del e-commerce educativo `html-css-portafolio2` con design system, accesibilidad y SEO modernos. Stack vanilla (HTML + CSS + JS + Firebase) — sin build step.
 
-<p align="center" style="display: flex; justify-content: center; gap: 10px;">
-    <a href="https://github.com/jike777/html-css-portafolio2">
-        <img src="https://img.shields.io/badge/STATUS-Open%20Source-green">
-    </a>
-    <a href="https://github.com/jike777/html-css-portafolio2">
-        <img src="https://img.shields.io/badge/License-not%20specified-red">
-    </a>
-</p>
+**Live:** https://jike777.github.io/juan-salvador-shop-v2/
+**Repo origen:** https://github.com/jike777/html-css-portafolio2 (deprecated)
 
+---
 
-<h1 align="center">E-commerce Website Project</h1>
+## Por qué v2
 
-## Índice
-- [Descripción del Proyecto](#descripción-del-proyecto)
-- [Estado del Proyecto](#estado-del-proyecto)
-- [Características de la Aplicación y Demostración](#características-de-la-aplicación-y-demostración)
-- [Acceso al Proyecto](#acceso-al-proyecto)
-- [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Mejoras Implementadas](#mejoras-implementadas)
-- [Cómo Contribuir](#cómo-contribuir)
-- [Personas Desarrolladoras del Proyecto](#personas-desarrolladoras-del-proyecto)
-- [Licencia](#licencia)
+El repo original tenía:
+- ~1850 líneas de CSS sin tokens, 20+ hex sueltos, 7 breakpoints superpuestos.
+- 4 typos visibles en producción (`Satifechos`, `Mi cuanta`, `Iniciar Sección`, apóstrofes mal cerrados).
+- HTML sin `<nav>` / `<main>`, iconos sin `aria-label`, headings invertidos.
+- 0 metadata social (OG / Twitter Cards / JSON-LD).
+- Auth-gate forzado en el home: cualquier visitante que no estuviera logueado era redirigido a `auth.html` antes de ver nada.
 
-## Descripción del Proyecto
-Este proyecto es un sitio web de e-commerce totalmente responsivo, creado utilizando HTML, CSS y JavaScript. Está diseñado para enseñar a principiantes cómo construir y desplegar un sitio web de comercio electrónico multipágina desde cero. El proyecto abarca desde la creación de una barra de navegación responsiva hasta un pie de página completamente funcional, todo en un solo video tutorial.
+En vez de refactorizar en branches del repo viejo, se arrancó este v2 con baseline limpio y un sistema de diseño coherente.
 
-### Objetivos del Proyecto
-- Mejorar la accesibilidad de la página.
-- Realizar todo tipo de pruebas para asegurar la funcionalidad.
-- Habilitar el carrito de compras dinámico..
-- Agregar una pasarela de pago.
-- Ajustar estilos CSS según sea necesario.
-- Añadir nuevos productos y fotos.
-- Crear una validación de clientes.
-- Crear una base de datos para la página.
-- Usar Firebase como backend ligero.
+---
 
-## Estado del Proyecto
-<h4 align="center"> 
-   🚧 Proyecto en construcción 🚧 
-</h4>
+## Stack
 
-## Características de la Aplicación y Demostración
-### :hammer: Funcionalidades del Proyecto
-- `Funcionalidad 1`: Mejora de la accesibilidad.
-- `Funcionalidad 2`: Habilitación del carrito de compras.
-- `Funcionalidad 3`: Integración de pasarela de pagos.
-- `Funcionalidad 4`: Ajustes de estilos CSS.
-- `Funcionalidad 5`: Añadir nuevos productos y fotografías.
-- `Funcionalidad 6`: Creación de validaciones de cliente.
-- `Funcionalidad 7`: Creación de una base de datos para la página.
+| Capa | Decisión |
+|---|---|
+| Estructura | HTML semántico (`<header>`, `<nav>`, `<main>`, `<footer>`) — sin framework |
+| Estilos | CSS nativo con tokens (`css/tokens.css`) — sin Tailwind, sin build |
+| Tipografía | Playfair Display (display) + Inter (sans) vía Google Fonts |
+| Paleta | Premium black + gold (stone-50 / ink-900 / gold-600) |
+| JS | ES Modules vanilla, sin bundler |
+| Backend | Firebase Auth + (opcional) Cloud Functions en `functions/` |
+| Datos | `productos.json` estático (660 líneas, ~37KB) |
+| Pagos | ePayco checkout (sandbox, vía `<script src="checkout.epayco.co">`) |
+| Hosting | GitHub Pages (rama `main`, root path) |
 
-## ✅ Mejoras Implementadas
+---
 
-- **HTML Semántico**: Uso adecuado de `section`, `header`, `footer`, `main`, etc.
-- **Accesibilidad Web**: Mejora de textos alternativos (`alt`), encabezados estructurados, y mejor contraste.
-- **Responsive Design**: Ajuste completo en CSS para mejorar visualización en todos los dispositivos.
-- **SEO Inicial**: Uso correcto de `meta` etiquetas, estructura jerárquica y enlaces accesibles.
-- **Carrito Dinámico**: Base funcional del carrito conectada con JavaScript.
-- **Optimización Visual**: Rediseño visual del `header`, `footer` y banners usando Flexbox y estilos más suaves.
-- **Conexión con Firebase**: Preparado para añadir base de datos y autenticación.
-- **Código Limpio y Validado**: Sintaxis HTML/CSS revisada, validada y optimizada.
-- **Versionamiento en GitHub**: Proyecto vinculado a GitHub con control de versiones.
-- **Integridad y Seguridad del Carrito**: Se implementaron firmas HMAC-SHA256 para validar la integridad del carrito y detectar manipulaciones de datos. 
-- **Manejo de Errores y Seguridad**: Se mejoró el manejo de errores con `console.error()` y se eliminó cualquier `console.log()` que podría exponer datos sensibles.
-- **Validación de Carrito en `gracias.html`**: Se añadió validación de integridad del carrito en la página de confirmación.
-- **Uso de `sessionStorage` y `localStorage`**: Se optimizó el uso de `sessionStorage` y `localStorage` para almacenar de manera segura la firma y los productos del carrito.
+## Estructura del proyecto
 
+```
+juan-salvador-shop-v2/
+├── index.html               ← Home (público, sin auth-gate)
+├── shop.html / product.html / cart.html / auth.html
+├── about.html / blog.html / contact.html
+├── coleccion.html / ofertas.html
+├── 404.html / gracias.html / confirmaicon.html
+│
+├── css/
+│   ├── tokens.css           ← Source of truth: paleta, spacing 4/8,
+│   │                          type scale, radius, shadows, motion
+│   ├── style.css            ← Estilos globales del sitio (~2400 líneas)
+│   └── colecciones.css      ← Estilos específicos de coleccion/ofertas
+│
+├── js/
+│   ├── firebase-config.js   ← Init de Firebase (Auth + Google Provider)
+│   ├── auth.js              ← Login con Google + manejo de sesión
+│   ├── script.js            ← Lógica del home + nav + product detail
+│   ├── cart.js              ← Carrito (con firma HMAC vía signing.js)
+│   ├── signing.js           ← HMAC-SHA256 para integridad de carrito
+│   ├── utils.js             ← Helpers (renderEstrellas, etc.)
+│   ├── product.js           ← Página individual de producto
+│   ├── coleccion.js / ofertas.js / productos-categoria.js
+│   ├── whatsapp-fab.js      ← Botón flotante de WhatsApp
+│   └── verificarImagenes.js ← Utility Node script (no se carga en browser)
+│
+├── img/                     ← Assets visuales (no se movió — paths estables)
+│   ├── home/ banner/ products/ pay/ features/ favicon/
+│
+├── productos.json           ← Datos de productos (fetched por script.js)
+├── functions/               ← Firebase Cloud Functions (opcional)
+├── public/                  ← Firebase hosting target (alternativo a GH Pages)
+├── firebase.json / .firebaserc
+└── README.md
+```
 
+---
 
-## 🌐 Acceso a la Demo
+## Sistema de diseño
 
-Puedes ver una demo en línea del sitio web aquí:  
-👉 [https://jike777.github.io/html-css-portafolio2](https://jike777.github.io/html-css-portafolio2)
+Tokens definidos en `css/tokens.css`. **No usar hex sueltos en componentes** — referenciar siempre `var(--*)`.
 
-> ⚠️ Si aún no está publicada, puedes hacerlo usando GitHub Pages. ¿Quieres ayuda con eso?
+### Paleta
 
-## 📊 Funcionalidades y Progreso
+```css
+/* Neutros warm (stone) */
+--ink-950  #0C0A09   /* text max contrast */
+--ink-900  #1C1917   /* botones primarios, headers */
+--ink-700  #44403C   /* texto secundario */
+--ink-500  #78716C   /* muted, labels */
+--ink-300  #D6D3D1   /* borders, dividers */
+--ink-100  #E8ECF0   /* surfaces */
+--ink-50   #FAFAF9   /* background página */
 
-| Funcionalidad                           | Estado       | Notas adicionales                          |
-|----------------------------------------|--------------|--------------------------------------------|
-| Estructura base multipágina            | ✅ Completo   | Todas las secciones funcionando            |
-| Diseño Responsivo                      | ✅ Completo   | Adaptado a móviles y tablets               |
-| Sistema de carrito con JavaScript      | ⚙️ En progreso | Permite agregar y mostrar productos        |
-| Validación de cliente                  | ⚙️ En progreso | Implementación en Firebase Functions       |
-| Base de datos (Firebase)               | ⚙️ En progreso | Estructura modular añadida                 |
-| Pasarela de pagos                      | ⚙️ En progreso | Configuración con ePayco en marcha         |
-| Mejora de accesibilidad y semántica    | ✅ Completo   | Revisión de `alt`, encabezados y roles     |
-| SEO básico                             | ✅ Completo   | Meta etiquetas, títulos correctos          |
-| Subida y gestión en GitHub             | ✅ Completo   | Proyecto en repositorio público            |
-| Hosting y backend (Firebase)           | ✅ Completo   | Dominio personalizado y funciones activas  |
+/* Gold (único acento — además del negro) */
+--gold-700  #854D0E   /* hover */
+--gold-600  #A16207   /* primary accent */
+--gold-400  #D4A017   /* highlights, ratings */
 
+/* Semantic */
+--destructive  #DC2626
+--whatsapp     #25D366  /* brand externa — no tocar */
+```
 
-# 🛠️ Proyecto Web - Documentación
+### Spacing (escala 4/8)
+`--s-1` (4px) → `--s-24` (96px). Steps: 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96.
 
-## Mejoras recientes
+### Type scale
+`--t-xs` (0.75rem) → `--t-6xl` (4rem). Display headlines: `--t-display: clamp(2.75rem, 7vw, 5.75rem)`.
 
-### #feat: Integración completa de backend y frontend con Firebase
+### Breakpoints canónicos
+| Token | Min width |
+|---|---|
+| sm  | 640px  |
+| md  | 768px  |
+| lg  | 1024px |
+| xl  | 1280px |
+| 2xl | 1440px |
 
-- Implementación de la validación y firma del carrito en el backend usando Firebase Functions.
-- Configuración de la firma digital de las transacciones ePayco para garantizar seguridad.
-- Realización de pruebas exitosas con curl y validación en el emulador.
-- Conexión correcta entre el backend (Firebase Functions) y el frontend (Firebase Hosting).
-- Despliegue de la aplicación en Firebase Hosting con dominio personalizado configurado.
-- Solución de problemas con la configuración del dominio y la propagación de DNS.
+> **Deuda Fase 2:** quedan ~13 breakpoints legacy (360/393/477/480/600/712/767/799/1024/1136/1279/1366) por consolidar a los 4 canónicos. Documentado in-CSS en la sección "MEDIA QUERIES".
 
-## Acceso al Proyecto
+---
 
-**Puedes descargar o acceder al código fuente del proyecto de las siguientes maneras:**
+## Correr local
 
-- Clona el repositorio usando HTTPS: [https://github.com/jike777/html-css-portafolio2.git](https://github.com/jike777/html-css-portafolio2.git)
-- Usa GitHub CLI para clonar el repositorio: `gh repo clone jike777/html-css-portafolio2`
+Por la arquitectura de `fetch('productos.json')`, **no funciona abrir el HTML por `file://`** — CORS lo bloquea. Necesitás un servidor HTTP local.
 
-## 🛠️ Abre y Ejecuta el Proyecto
+### Opción 1 — Python
+```bash
+cd juan-salvador-shop-v2
+python -m http.server 8080
+# Abrir http://localhost:8080
+```
 
-**Para abrir y ejecutar el proyecto, sigue estos pasos:**
+### Opción 2 — Node `serve`
+```bash
+npx serve .
+```
 
-1. **Clona el repositorio:**
-   - Usa el comando `git clone https://github.com/jike777/html-css-portafolio2.git` en tu terminal o clona el repositorio con GitHub CLI usando `gh repo clone jike777/html-css-portafolio2`.
+### Opción 3 — VS Code Live Server
+Instalá la extensión "Live Server" → click derecho sobre `index.html` → "Open with Live Server".
 
-2. **Navega a la carpeta del proyecto:**
-   - Abre una terminal y navega a la carpeta del proyecto con `cd html-css-portafolio2`.
+---
 
-3. **Abre los archivos del proyecto:**
-   - Puedes abrir los archivos del proyecto en tu editor de código favorito, como Visual Studio Code, usando el comando `code .` (si tienes Visual Studio Code instalado).
+## Deploy
 
-4. **Visualiza el proyecto en un navegador:**
-   - Si el proyecto incluye un archivo HTML, puedes abrir el archivo `index.html` en tu navegador para ver el sitio web.
+**Producción:** GitHub Pages está habilitado para `main` rama root.
+- Cada push a `main` dispara rebuild automático (~1 min).
+- URL: https://jike777.github.io/juan-salvador-shop-v2/
+- Build status: `gh api repos/jike777/juan-salvador-shop-v2/pages/builds/latest`
 
-5. **Ejecuta un servidor local (si es necesario):**
-   - Si el proyecto requiere un servidor local, usa herramientas como `live-server` (instalado con npm) o cualquier otra herramienta para servir archivos estáticos.
+---
 
-   ```sh
-   npx live-server
+## Decisiones arquitectónicas
 
+### 1. Home público (sin auth-gate)
+El repo original redirigía a `auth.html` a cualquier visitante sin login. Anti-UX para e-commerce. v2 sigue el patrón de Amazon/MercadoLibre/Zara: home y catálogo públicos, login solo requerido en flujos sensibles (checkout, agregar al carrito).
 
-## Tecnologías Utilizadas
-- **HTML**: Para la estructura del sitio web.
-- **CSS**: Para el diseño y estilo responsivo.
-- **JavaScript**: Para la interactividad y funcionalidad dinámica del sitio web.
-- **Web Crypto API**: Para la generación y verificación de firmas HMAC-SHA256 en el carrito de compras.
-- **sessionStorage** y **localStorage**: Para almacenar de manera segura los datos del carrito y las firmas HMAC.
+Ver `js/script.js:209` — el branch `else` de `onAuthStateChanged` ya no redirige.
 
+### 2. Tokens > Tailwind
+Tailwind agregaría un build step (PostCSS, JIT) que rompe la simplicidad del proyecto educativo. CSS custom properties nativas cubren el 95% del beneficio sin tooling.
 
-## 🧪 Pruebas de Integridad
+### 3. Vanilla > Framework
+El proyecto es trabajo de grado universitario. Mantener vanilla deja visible la arquitectura: cómo se carga Firebase, cómo se inyecta el carrito, cómo funciona el fetch de productos. Un framework abstrae todo eso.
 
-- **Pruebas de Firma HMAC**: Se realizaron pruebas exhaustivas para verificar la integridad del carrito, incluyendo cambios en la cantidad, eliminación y reordenamiento de productos. 
-- **Validación en `gracias.html`**: Se verificó que la firma del carrito sea correcta al momento de la confirmación del pago. 
-- **Seguridad Mejorada**: Se implementaron controles para evitar manipulaciones del carrito y garantizar la integridad de los datos.
+### 4. ES Modules sin bundler
+`<script type="module">` carga Firebase desde el CDN oficial y los archivos locales son importados con `from './...'`. Funciona en todos los browsers modernos sin Webpack/Vite/Rollup.
 
+---
 
-## Cómo Contribuir
-Este proyecto está abierto a la colaboración. Si deseas contribuir, sigue estos pasos:
-1. Haz un fork del repositorio.
-2. Crea una rama con tu función: `git checkout -b mi-nueva-funcionalidad`.
-3. Haz commit de tus cambios: `git commit -m 'Añadir nueva funcionalidad'`.
-4. Push a la rama: `git push origin mi-nueva-funcionalidad`.
-5. Abre un Pull Request para revisar tus cambios.
+## Deuda pendiente (Fase 2 +)
 
-## Personas Desarrolladoras del Proyecto
-<p align="left">
-  <img src="https://github.com/user-attachments/assets/233b8aab-a134-40c0-84c5-793c51706cdd" alt="Persona Desarrolladora" width="115">
-  <br>
-  <sub>Jimmy Orlando Cortes</sub>
-  <br>
-  <a href="https://github.com/jike777">Jike777</a>
-</p>
+- [ ] Consolidar ~13 breakpoints superpuestos a los 4 canónicos
+- [ ] Heading hierarchy en headers internos de subpáginas (hero del index ya arreglado)
+- [ ] Migrar `<section id="header">` restante en algunas subpáginas a `<header>`
+- [ ] Lazy load de productos (paginación / infinite scroll en `shop.html`)
+- [ ] Dark mode (variantes en `tokens.css` ya parcialmente listas)
+- [ ] JSON-LD Product dinámico (actualmente genérico — debería leer de `productos.json`)
+- [ ] og:image dedicada (actualmente apunta a logo3.webp — generar imagen 1200×630)
+- [ ] Service Worker para PWA + offline
+- [ ] Split de `js/script.js` (~250 líneas) en módulos por feature
+- [ ] Sustituir Font Awesome (440KB) por SVG inline o Lucide
 
+---
+
+## Créditos
+
+**Developer:** Jimmy Orlando Cortés ([@jike777](https://github.com/jike777)) — Universidad CUN
+**Refactor v2:** sesión asistida con Claude Code (Anthropic).
 
 ## Licencia
-Este proyecto no tiene una licencia especificada. Si deseas contribuir o utilizar el código, ten en cuenta que esto podría limitar los permisos disponibles.
 
-# Build-and-Deploy-Ecommerce-Website-With-HTML-CSS-JavaScript 
-## About this course
-
-I LEARN HOW TO BUILD AND DEPLOY FULLY RESPONSIVE E-COMMERCE WEBSITE USING HTML CSS & JAVASCRIPT. This is a free HTML CSS Course that I find on YouTube. And in this course, I learned how to build and deploy a full multipage e-commerce website completely from scratch, step by step. I created from responsive navbar using HTML CSS JavaScript to responsive footer in one video.
-
-## Why This Course?
-
-- Responsive Ecommerce Website Tutorial Using HTML CSS & JavaScript.
-- Completely For Beginners.
-- Multipage Ecommerce Website Project.
-- Best Beginner Friendly Free Course On YouTube.
-- Learn How to build amazing professional and responsive websites.
-- Learn the fundamentals of web design.
-- Modern CSS, including flexbox and CSS Grid for layout.
-- Modern CSS techniques to create stunning designs and effects.
-- How to use common components and layout patterns for professional website design and development.
-- Advanced responsive design using media queries.
-- And Many More.
-
-## Sections
-
-- Part1: Responsive Home Page Design.
-- Part2: Shop Page & Single Product Page.
-- Part3: Blog Page.
-- Part4: About Page.
-- Part5: Contact Us.
-- Part6: Ecommerce Shopping Cart.
-
-## Here is the source of this project where I learned a lot:
-
-[<img alt="Build-and-Deploy-Ecommerce-Website-With-HTML-CSS-JavaScript" width="100%" src="https://github.com/tech2etc/Youtube-Tutorials/blob/main/Build%20and%20Deploy%20Ecommerce%20Website%20With%20HTML%20CSS%20JavaScript%20Full%20Responsive%20Ecommerce%20Course%20FREE.PNG?raw=true" />](https://youtu.be/P8YuWEkTeuE/)
+No especificada todavía. El código original era educativo (trabajo de grado).

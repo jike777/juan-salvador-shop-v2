@@ -43,15 +43,15 @@
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     />
-    <link rel="stylesheet" href="tokens.css">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/style.css" />
   
     <!-- Structured Data: Organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ClothingStore",
-      "name": "Juan Salvador''s Shop",
+      "name": "Juan Salvador’s Shop",
       "alternateName": "Tienda Juan Salvador",
       "url": "https://jike777.github.io/juan-salvador-shop-v2/",
       "logo": "https://jike777.github.io/juan-salvador-shop-v2/img/home/logo3.webp",
@@ -127,16 +127,13 @@
     </header>
 
     <main>
-    <!-- Sección de la tienda — pública por defecto.
-         Auth opcional: el carrito y checkout sí requieren login (ver cart.js). -->
-    <section id="shop-section">
       <!-- Hero: Fotografía Juan cruzado de brazos, titulos y parrafos de oferta -->
 
       <section id="hero">
-        <h4>Train-in-offer</h4>
-        <h2>Ofertas de gran valor</h2>
+        <p class="hero-eyebrow">Train-in-offer</p>
         <h1>En todos los productos</h1>
-        <p>
+        <p class="hero-subtitle">Ofertas de gran valor</p>
+        <p class="hero-lede">
           Ahorre más con cupones y hasta un 20% de descuento despues de 3
           compras
         </p>
@@ -202,7 +199,7 @@
           <h2>Grandes Ofertas</h2>
           <span
             >Los mejores productos y calidad los encuentras en Juan
-            Salvador'Shop
+            Salvador&rsquo;s Shop
           </span>
           <button
             class="white"
@@ -245,10 +242,8 @@
           <h3>Colección de Verano -10% OFF</h3>
         </div>
       </section>
-    </section>
-    <!-- Cierre de #banner3 -->
 
-    <!-- Newslatter -->
+      <!-- Newslatter -->
 
     <section id="newslatter" class="section-p1 section-m1">
       <div class="newstext">
@@ -332,14 +327,14 @@
       </div>
     </footer>
     <!-- ✅ Importar configuración de Firebase (Siempre antes que otros scripts) -->
-    <script type="module" src="./firebase-config.js"></script>
+    <script type="module" src="./js/firebase-config.js"></script>
 
     <!-- ✅ Script del carrito (No es módulo, usa `defer`) -->
-    <script src="cart.js" defer></script>
+    <script src="js/cart.js" defer></script>
 
     <!-- ✅ Script principal (Es módulo, `type="module"`) -->
-    <script type="module" src="script.js"></script>
+    <script type="module" src="js/script.js"></script>
     <!-- ✅ Botón flotante de WhatsApp (NO módulo, pero no necesita defer si va al final) -->
-    <script src="whatsapp-fab.js" defer></script>
+    <script src="js/whatsapp-fab.js" defer></script>
   </body>
 </html>

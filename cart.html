@@ -32,8 +32,8 @@
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     />
-    <link rel="stylesheet" href="tokens.css">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
@@ -215,18 +215,18 @@
       </div>
     </footer>
     <!-- ✅ Importar configuración de Firebase (Siempre antes que otros scripts) -->
-    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="js/firebase-config.js"></script>
 
     <!-- ✅ Script principal (Es módulo, `type="module"`) -->
-    <script type="module" src="script.js"></script>
+    <script type="module" src="js/script.js"></script>
 
     <!-- ✅ Script de ePayco -->
     <script src="https://checkout.epayco.co/checkout.js"></script>
 
     <!-- ✅ Script del carrito (dinámico) -->
-    <script type="module" src="cart.js" defer></script>
+    <script type="module" src="js/cart.js" defer></script>
     
     <!-- ✅ Botón flotante de WhatsApp (NO módulo, pero no necesita defer si va al final) -->
-    <script src="whatsapp-fab.js" defer></script>
+    <script src="js/whatsapp-fab.js" defer></script>
   </body>
 </html>
