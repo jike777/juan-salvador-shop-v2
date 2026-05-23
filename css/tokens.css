@@ -131,6 +131,52 @@
   -------------------------------------------------------------- */
 }
 
+/* ---------- Dark mode (OS-level, sin toggle manual) ----------
+   Activado por el SO vía `prefers-color-scheme: dark`. NO hay JS de toggle.
+   Estrategia: solo remapeamos los ALIASES SEMÁNTICOS — los primitivos
+   (--ink-*, --gold-*) NO se tocan. La identidad visual (black+gold) se
+   preserva; solo se invierte qué rol toma cada primitivo.
+
+   Notas de identidad:
+   - El fondo pasa de crema (ink-50) a casi-negro (ink-950).
+   - El gold de acento sube a gold-400 para garantizar contraste AA cómodo
+     sobre el fondo oscuro (gold-600 sobre ink-950 da 4.01:1, justo por
+     debajo de 4.5 para texto pequeño; gold-400 da 8.32:1 y mantiene la
+     identidad cálida del oro). El hover usa gold-500 — simétrico al
+     gold-700 del light mode (un paso "más al centro").
+   - El glass-bg se invierte (oscuro translúcido) y el border glass usa
+     una blanca sutil para que el efecto siga leyéndose sobre fondo dark.
+   ------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Aliases semánticos remapeados */
+    --color-background:    var(--ink-950);
+    --color-foreground:    var(--ink-50);
+    --color-primary:       var(--ink-50);
+    --color-on-primary:    var(--ink-950);
+    --color-secondary:     var(--ink-300);
+    --color-accent:        var(--gold-400);
+    --color-accent-hover:  var(--gold-500);
+    --color-muted:         var(--ink-500);
+    --color-border:        var(--ink-700);
+    --color-surface:       var(--ink-900);
+
+    /* Liquid Glass invertido */
+    --glass-bg:        rgba(28, 25, 23, 0.55);
+    --glass-border:    rgba(255, 255, 255, 0.10);
+    --glass-shadow:    0 12px 40px -8px rgba(0, 0, 0, 0.55),
+                       0 2px 6px rgba(0, 0, 0, 0.35);
+
+    /* Sombras: en dark, las sombras "negras" pierden definición; las
+       subimos a negro puro con más opacidad para que los cards y
+       elevations sigan leyéndose. */
+    --shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.40);
+    --shadow-md:  0 4px 12px rgba(0, 0, 0, 0.45);
+    --shadow-lg:  0 12px 32px -8px rgba(0, 0, 0, 0.55);
+    --shadow-xl:  0 24px 60px -12px rgba(0, 0, 0, 0.65);
+  }
+}
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
