@@ -218,9 +218,21 @@ button.white {
   z-index: 1000;
 }
 
-/* ✅ Mostrar menú al pasar el mouse */
-#user-menu:hover .dropdown-menu {
+/* ✅ Mostrar dropdown: click toggle (touch + desktop) via .is-open.
+   Bug #1: en touch (Android, principal) :hover no se sostiene el tiempo
+   suficiente para alcanzar el link interno, quedaba inaccesible. JS pone
+   .is-open + aria-expanded="true" en tap. */
+#user-menu.is-open .dropdown-menu {
   display: block;
+}
+
+/* En desktop con mouse fino preservamos el affordance de hover como bonus
+   para no regresar UX existente. Touch devices (hover: none) ignoran esto
+   y dependen 100% del toggle por click. */
+@media (hover: hover) and (pointer: fine) {
+  #user-menu:hover .dropdown-menu {
+    display: block;
+  }
 }
 
 /* ✅ Estilo de los elementos del dropdown */
