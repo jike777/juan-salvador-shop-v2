@@ -2256,4 +2256,56 @@ footer .copyright {
 }
 
 
+/* =============================== */
+/* 🟦 Lazy load: botón "Cargar más" + sentinel + status                            */
+/* Pareja del bloque JS en js/script.js (inicializarPaginacionProductos).          */
+/* Reutiliza tokens gold-600 / white / color-border para coherencia con           */
+/* #pagination y el resto de la paleta. Sub-tarea 2.2 / FRONTEND-FASE-2.          */
+/* =============================== */
+.pro-load-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 20px 8px;
+  text-align: center;
+}
+
+.pro-load-more__btn {
+  appearance: none;
+  background-color: var(--gold-600);
+  color: var(--white);
+  border: 1px solid var(--gold-600);
+  border-radius: 4px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--dur-fast) var(--ease-out);
+  min-height: 44px; /* touch target a11y */
+}
+
+.pro-load-more__btn:hover,
+.pro-load-more__btn:focus-visible {
+  background-color: var(--ink-900);
+  border-color: var(--ink-900);
+  outline: none;
+}
+
+.pro-load-more__btn:focus-visible {
+  outline: 2px solid var(--gold-400);
+  outline-offset: 2px;
+}
+
+.pro-load-more__sentinel {
+  width: 100%;
+  height: 1px;
+}
+
+.pro-load-more__status {
+  font-size: 13px;
+  color: var(--ink-500);
+  margin: 0;
+}
+
 /* 🎯 Media Queries - WhatsApp*/
