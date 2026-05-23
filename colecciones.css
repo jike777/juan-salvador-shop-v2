@@ -19,7 +19,7 @@
     width: 100%;
     height: 60vh;
     border-radius: 10px;
-    color: #fff;
+    color: var(--white);
 }
 
 #coleccion-banner {
@@ -33,13 +33,13 @@
 
 #coleccion-banner h2 span,
 #ofertas-banner h2 span {
-    color: #ef3636;
+    color: var(--destructive);
 }
 
 #coleccion-banner h4,
 #ofertas-banner h4 {
     font-size: 20px;
-    color: #f9f6f6;
+    color: var(--ink-100);
 }
 
 #coleccion-banner h2,
@@ -50,21 +50,21 @@
 
 #coleccion-banner p,
 #ofertas-banner p {
-    color: #fff;
+    color: var(--white);
 }
 
 /* 📦 Sección informativa */
 .info-highlight {
-    background-color: #f4f4f4;
+    background-color: var(--ink-100);
     padding: 40px 60px;
     border-radius: 12px;
     margin: 2rem 0;
-    color: #333;
+    color: var(--ink-700);
     text-align: center;
 }
 
 .info-highlight--light {
-    background-color: #fff;
+    background-color: var(--white);
 }
 
 /* 🛒 Contenedor de productos (basado en #product1 .pro-container) */
@@ -81,13 +81,13 @@
     width: 23%;
     min-width: 250px;
     padding: 10px 12px;
-    border: 1px solid #cce7d0;
+    border: 1px solid var(--color-border);
     border-radius: 25px;
 
     cursor: pointer;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
-    transition: 0.2s ease;
-    background-color: #fff;
+    transition: var(--dur-fast) var(--ease-out);
+    background-color: var(--white);
     position: relative;
     /* ✅ Esta línea lo arregla */
 }
@@ -107,25 +107,25 @@
 }
 
 .coleccion-grid .pro .des span {
-    color: #606063;
+    color: var(--ink-500);
     font-size: 12px;
 }
 
 .coleccion-grid .pro .des h5 {
     padding-top: 7px;
-    color: #1a1a1a;
+    color: var(--ink-900);
     font-size: 14px;
 }
 
 .coleccion-grid .pro .des i {
     font-size: 12px;
-    color: rgba(243, 181, 25);
+    color: var(--gold-400);
 }
 
 .coleccion-grid .pro .des h4 {
     padding-top: 7px;
     font-size: 15px;
-    color: #088178;
+    color: var(--gold-600);
 }
 
 /* 🛒 Icono carrito */
@@ -135,10 +135,10 @@
     height: 40px;
     line-height: 40px;
     border-radius: 50%;
-    background-color: #e8f6ea;
+    background-color: var(--ink-100);
     /* fondo blanco o transparente */
-    color: #088178;
-    border: 1px solid #cce7d0;
+    color: var(--gold-600);
+    border: 1px solid var(--color-border);
     /* borde para simular el estilo index */
     position: absolute;
     bottom: 20px;
@@ -152,13 +152,13 @@
 }
 
 .star i {
-    color: #f3b519;
+    color: var(--gold-400);
     font-size: 16px;
     margin-right: 2px;
 }
 
 .cart-coleccion i {
-    color: #088178;
+    color: var(--gold-600);
 }
 
 .cart-coleccion:hover {
@@ -188,7 +188,7 @@
 }
 
 .back-button-co {
-    background-color: #088178;
+    background-color: var(--gold-600);
     color: white;
     border: none;
     padding: 12px 24px;
@@ -199,5 +199,5 @@
 }
 
 .back-button-co:hover {
-    background-color: #066b65;
+    background-color: var(--gold-700);
 }

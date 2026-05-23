@@ -1,0 +1,142 @@
+/* =========================================================================
+   Juan Salvador's Shop — Design Tokens
+   ---------------------------------------------------------------------------
+   Source of truth para todo el sistema visual de v2.
+   Derivado del mock Liquid Glass — premium black + gold.
+   Importar ANTES de style.css en todos los .html.
+   ========================================================================= */
+
+/* ---------- Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap');
+
+:root {
+  /* ---------- Color palette (premium black + gold) ---------- */
+
+  /* Stone / Ink scale — neutros cálidos, base de toda la UI */
+  --ink-950: #0C0A09;      /* texto sobre fondo claro (max contrast) */
+  --ink-900: #1C1917;      /* botones primarios, texto principal */
+  --ink-700: #44403C;      /* texto secundario */
+  --ink-500: #78716C;      /* texto muted, labels */
+  --ink-300: #D6D3D1;      /* borders, dividers */
+  --ink-100: #E8ECF0;      /* surfaces suaves, chips */
+  --ink-50:  #FAFAF9;      /* background página (stone/cream) */
+  --white:   #FFFFFF;
+
+  /* Gold (acento — el único color de marca, además del negro) */
+  --gold-700: #854D0E;     /* hover oscuro */
+  --gold-600: #A16207;     /* acento primario — WCAG 3:1 */
+  --gold-500: #B58330;     /* mid-tone */
+  --gold-400: #D4A017;     /* highlights, ratings, badges */
+  --gold-200: #FACC15;     /* iluminación opcional */
+
+  /* Semantic */
+  --destructive: #DC2626;
+  --success:     #16A34A;
+  --info:        #2563EB;
+  --whatsapp:    #25D366;  /* color de marca externa — no tocar */
+
+  /* Aliases semánticos — preferí estos sobre los anteriores */
+  --color-background:    var(--ink-50);
+  --color-foreground:    var(--ink-950);
+  --color-primary:       var(--ink-900);
+  --color-on-primary:    var(--white);
+  --color-secondary:     var(--ink-700);
+  --color-accent:        var(--gold-600);
+  --color-accent-hover:  var(--gold-700);
+  --color-muted:         var(--ink-500);
+  --color-border:        var(--ink-300);
+  --color-surface:       var(--white);
+
+  /* Liquid Glass surfaces */
+  --glass-bg:        rgba(255, 255, 255, 0.55);
+  --glass-bg-dark:   rgba(28, 25, 23, 0.45);
+  --glass-border:    rgba(255, 255, 255, 0.6);
+  --glass-shadow:    0 12px 40px -8px rgba(28, 25, 23, 0.18),
+                     0 2px 6px rgba(28, 25, 23, 0.06);
+
+  /* ---------- Spacing scale (4 / 8 system) ---------- */
+  --s-1:  0.25rem;   /*  4px */
+  --s-2:  0.5rem;    /*  8px */
+  --s-3:  0.75rem;   /* 12px */
+  --s-4:  1rem;      /* 16px */
+  --s-5:  1.25rem;   /* 20px */
+  --s-6:  1.5rem;    /* 24px */
+  --s-8:  2rem;      /* 32px */
+  --s-10: 2.5rem;    /* 40px */
+  --s-12: 3rem;      /* 48px */
+  --s-16: 4rem;      /* 64px */
+  --s-20: 5rem;      /* 80px */
+  --s-24: 6rem;      /* 96px */
+
+  /* ---------- Type scale ---------- */
+  --t-xs:      0.75rem;
+  --t-sm:      0.875rem;
+  --t-base:    1rem;
+  --t-lg:      1.125rem;
+  --t-xl:      1.25rem;
+  --t-2xl:     1.5rem;
+  --t-3xl:     1.875rem;
+  --t-4xl:     2.25rem;
+  --t-5xl:     3rem;
+  --t-6xl:     4rem;
+  --t-display: clamp(2.75rem, 7vw, 5.75rem);
+
+  /* Font families */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans:    'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Line-heights */
+  --lh-tight:  1.1;
+  --lh-snug:   1.3;
+  --lh-base:   1.5;
+  --lh-relaxed: 1.7;
+
+  /* ---------- Radius ---------- */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   22px;
+  --radius-pill: 999px;
+
+  /* ---------- Shadows ---------- */
+  --shadow-sm:  0 1px 2px rgba(28, 25, 23, 0.06);
+  --shadow-md:  0 4px 12px rgba(28, 25, 23, 0.08);
+  --shadow-lg:  0 12px 32px -8px rgba(28, 25, 23, 0.16);
+  --shadow-xl:  0 24px 60px -12px rgba(28, 25, 23, 0.24);
+
+  /* ---------- Motion ---------- */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:    cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --dur-fast:    150ms;
+  --dur-base:    250ms;
+  --dur-slow:    400ms;
+  --dur-slower:  600ms;
+
+  /* ---------- Z-index scale ---------- */
+  --z-base:     1;
+  --z-sticky:   10;
+  --z-fixed:    20;
+  --z-modal:    40;
+  --z-overlay:  100;
+  --z-tooltip:  1000;
+
+  /* ---------- Breakpoints (referencia — usar en @media) ----------
+     bp-sm:  640px   teléfono grande
+     bp-md:  768px   tablet portrait
+     bp-lg:  1024px  tablet landscape / laptop chico
+     bp-xl:  1280px  desktop
+     bp-2xl: 1440px  desktop ancho
+  -------------------------------------------------------------- */
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

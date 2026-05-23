@@ -14,7 +14,26 @@
     />
     <meta name="author" content="Juan Salvador Cortés" />
 
-    <title>Online Juan Salvador's Shop</title>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Juan Salvador's Shop" />
+    <meta property="og:title" content="Juan Salvador's Shop — Tienda de ropa online" />
+    <meta property="og:description" content="Tienda online de ropa con ofertas, descuentos y colecciones nuevas para toda la familia." />
+    <meta property="og:image" content="https://jike777.github.io/juan-salvador-shop-v2/img/home/logo3.webp" />
+    <meta property="og:url" content="https://jike777.github.io/juan-salvador-shop-v2/" />
+    <meta property="og:locale" content="es_CO" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Juan Salvador's Shop — Tienda de ropa online" />
+    <meta name="twitter:description" content="Tienda online de ropa con ofertas, descuentos y colecciones nuevas para toda la familia." />
+    <meta name="twitter:image" content="https://jike777.github.io/juan-salvador-shop-v2/img/home/logo3.webp" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://jike777.github.io/juan-salvador-shop-v2/" />
+    
+
+    <title>Juan Salvador's Shop — Tienda de ropa online</title>
     <link rel="icon" href="./img/favicon/favicon JS.webp" type="image/x-icon" />
     <link
       rel="stylesheet"
@@ -24,7 +43,34 @@
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     />
+    <link rel="stylesheet" href="tokens.css">
     <link rel="stylesheet" href="style.css" />
+  
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ClothingStore",
+      "name": "Juan Salvador''s Shop",
+      "alternateName": "Tienda Juan Salvador",
+      "url": "https://jike777.github.io/juan-salvador-shop-v2/",
+      "logo": "https://jike777.github.io/juan-salvador-shop-v2/img/home/logo3.webp",
+      "description": "Tienda online de ropa, accesorios y calzado. Colecciones nuevas, descuentos y entrega local.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Galan, Cll. 24 #20-71, Apt. 103",
+        "addressLocality": "Saravena",
+        "addressRegion": "Arauca",
+        "addressCountry": "CO"
+      },
+      "telephone": ["+57 300 672 2348", "+57 319 575 2019"],
+      "openingHours": "Mo-Sa 08:00-18:00",
+      "founder": {
+        "@type": "Person",
+        "name": "Juan Salvador Cortés Rodríguez"
+      }
+    }
+    </script>
   </head>
 
   <!-- Header Menu: Home, Shop, Blog, About, Contact. -->
@@ -37,7 +83,7 @@
           class="logo"
           alt="Logo de Juan Salvador Shop"
       /></a>
-      <div>
+      <nav aria-label="Navegación principal">
         <ul id="navbar">
           <li><a class="active" href="index.html">Home</a></li>
           <li><a href="shop.html">Shop</a></li>
@@ -45,7 +91,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li id="lg-bag">
-            <a href="cart.html"><i class="far fa-shopping-cart"></i></a>
+            <a href="cart.html" aria-label="Carrito"><i class="far fa-shopping-cart" aria-hidden="true"></i></a>
           </li>
           <!-- 🔽 Nuevo menú desplegable de usuario -->
           <li id="user-menu" class="dropdown" hidden>
@@ -71,15 +117,16 @@
             </ul>
           </li>
 
-          <a href="#" id="close"><i class="far fa-times"></i></a>
+          <a href="#" id="close" aria-label="Cerrar menú"><i class="far fa-times" aria-hidden="true"></i></a>
         </ul>
-      </div>
+      </nav>
       <div id="mobile">
-        <a href="cart.html"><i class="far fa-shopping-cart"></i></a>
-        <i id="bar" class="fas fa-outdent"></i>
+        <a href="cart.html" aria-label="Carrito"><i class="far fa-shopping-cart" aria-hidden="true"></i></a>
+        <button id="bar" class="fas fa-outdent" aria-label="Abrir menú" type="button"></button>
       </div>
     </header>
 
+    <main>
     <!-- Sección de la tienda (oculta hasta autenticarse) -->
     <section id="shop-section" style="display: none">
       <!-- Hero: Fotografía Juan cruzado de brazos, titulos y parrafos de oferta -->
@@ -125,10 +172,10 @@
         <div class="fe-box">
           <img
             src="img/features/d5.webp"
-            alt="Clientes Satifechos"
+            alt="Clientes Satisfechos"
             loading="lazy"
           />
-          <h6>Clientes Satifechos</h6>
+          <h6>Clientes Satisfechos</h6>
         </div>
         <div class="fe-box">
           <img src="img/features/d6.webp" alt="Soporte 24/7" loading="lazy" />
@@ -222,6 +269,7 @@
         <button class="normal">Sign Up</button>
       </div>
     </section>
+    </main>
 
     <footer class="section-p1">
       <div class="col">
@@ -261,8 +309,8 @@
         <a href="#">Contacta con Nosotros</a>
       </div>
       <div class="col">
-        <h4>Mi cuanta</h4>
-        <a href="#">Iniciar Sección</a>
+        <h4>Mi cuenta</h4>
+        <a href="#">Iniciar Sesión</a>
         <a href="#">Ver Carrito</a>
         <a href="#">Mi Lista de Deseo</a>
         <a href="#">Rastrear mi Pedido</a>

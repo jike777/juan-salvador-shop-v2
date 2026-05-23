@@ -1,16 +1,12 @@
 /* -------------------------------- */
-/* 1. Importación de Fuentes        */
-/* -------------------------------- */
-@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
-/* -------------------------------- */
-/* 2. Reset & Base Global           */
+/* 1. Base Global                    */
+/* (Fuentes y tokens vienen de tokens.css — importar antes que este archivo) */
 /* -------------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Spartan", sans-serif;
+  font-family: var(--font-sans);
 }
 
 html {
@@ -19,6 +15,8 @@ html {
 
 body {
   width: 100%;
+  background: var(--color-background);
+  color: var(--ink-900);
 }
 
 /* -------------------------------- */
@@ -39,31 +37,42 @@ body {
 /* -------------------------------- */
 /* 4. Tipografías Base              */
 /* -------------------------------- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink-950);
+  line-height: var(--lh-tight);
+}
+
+h4, h5, h6 {
+  font-family: var(--font-sans);
+  color: var(--ink-900);
+}
+
 h1 {
-  font-size: 50px;
-  line-height: 64px;
-  color: #222;
+  font-size: clamp(2.25rem, 5vw, 3.125rem);
+  line-height: var(--lh-tight);
 }
 
 h2 {
-  font-size: 46px;
-  color: #222;
+  font-size: clamp(1.875rem, 4vw, 2.875rem);
 }
 
 h4 {
-  font-size: 20px;
-  color: #222;
+  font-size: var(--t-xl);
 }
 
 h6 {
   font-weight: 700;
-  font-size: 12px;
+  font-size: var(--t-xs);
 }
 
 p {
-  font-size: 16px;
-  color: #465b52;
-  margin: 15px 0 20px 0;
+  font-size: var(--t-base);
+  color: var(--ink-700);
+  margin: var(--s-4) 0 var(--s-5) 0;
+  line-height: var(--lh-relaxed);
 }
 
 /* -------------------------------- */
@@ -84,25 +93,25 @@ button.normal {
   font-size: 14px;
   font-weight: 600;
   padding: 15px 30px;
-  color: #000;
-  background-color: #fff;
+  color: var(--ink-950);
+  background-color: var(--white);
   border-radius: 4px;
   cursor: pointer;
   border: none;
   outline: none;
-  transition: 0.02s ease;
+  transition: var(--dur-base) var(--ease-out);
 }
 
 button.white {
   font-size: 13px;
   font-weight: 600;
   padding: 11px 18px;
-  color: #fff;
+  color: var(--white);
   background-color: transparent;
   cursor: pointer;
-  border: 1px solid #fff;
+  border: 1px solid var(--white);
   outline: none;
-  transition: 0.02s ease;
+  transition: var(--dur-base) var(--ease-out);
 }
 
 /* -------------------------------- */
@@ -127,7 +136,7 @@ button.white {
   align-items: center;
   justify-content: space-between;
   padding: 20px 80px;
-  background: #E3E6F3;
+  background: var(--ink-50);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
   z-index: 999;
   position: relative;
@@ -151,13 +160,13 @@ button.white {
   text-decoration: none;
   font-size: 18px;
   font-weight: 600;
-  color: #1a1a1a;
-  transition: 0.3s ease;
+  color: var(--ink-900);
+  transition: var(--dur-base) var(--ease-out);
 }
 
 #navbar li a:hover,
 #navbar li a.active {
-  color: #088178;
+  color: var(--gold-600);
 }
 
 #navbar li a.active::after,
@@ -165,7 +174,7 @@ button.white {
   content: "";
   width: 30%;
   height: 2px;
-  background: #088178;
+  background: var(--gold-600);
   position: absolute;
   bottom: -4px;
   left: 20px;
@@ -184,13 +193,13 @@ button.white {
 #user-menu .dropdown-toggle {
   font-size: 18px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--ink-900);
   padding: 10px 20px;
-  transition: 0.3s ease;
+  transition: var(--dur-base) var(--ease-out);
 }
 
 #user-menu .dropdown-toggle:hover {
-  color: #088178;
+  color: var(--gold-600);
 }
 
 /* ✅ Estilo del dropdown */
@@ -221,15 +230,15 @@ button.white {
 
 #user-menu .dropdown-menu a {
   text-decoration: none;
-  color: #1a1a1a;
+  color: var(--ink-900);
   display: block;
   padding: 8px 15px;
-  transition: 0.3s ease;
+  transition: var(--dur-base) var(--ease-out);
 }
 
 #user-menu .dropdown-menu a:hover {
-  background: #f0f0f0;
-  color: #088178;
+  background: var(--ink-100);
+  color: var(--gold-600);
 }
 
 
@@ -295,13 +304,13 @@ button.white {
 #auth-section h2 {
   font-size: 2rem;
   font-weight: 600;
-  color: #3a506b;
+  color: var(--ink-900);
   margin-bottom: 15px;
 }
 
 /* 🔘 Botón de inicio de sesión */
 #login-btn {
-  background-color: #3a86ff;
+  background-color: var(--ink-900);
   color: white;
   border: none;
   padding: 12px 25px;
@@ -313,7 +322,7 @@ button.white {
 }
 
 #login-btn:hover {
-  background-color: #295bb0;
+  background-color: var(--gold-700);
   transform: scale(1.05);
 }
 
@@ -327,7 +336,7 @@ button.white {
   height: 90vh;
   width: 100%;
   background-size: contain;
-  background-color: #cee4e5;
+  background-color: var(--ink-50);
   background-repeat: no-repeat;
   background-position: center right;
   padding: 0 80px;
@@ -342,13 +351,13 @@ button.white {
 }
 
 #hero h1 {
-  color: #088178
+  color: var(--gold-600)
 }
 
 #hero button {
   background-image: url("img/home/button.webp");
   background-color: transparent;
-  color: #088178;
+  color: var(--gold-600);
   border: 0;
   padding: 14px 80px 14px 65px;
   background-repeat: no-repeat;
@@ -361,7 +370,7 @@ button.white {
 #hero button:hover {
   transform: scale(1.1);
   /* Agranda el botón al 110% de su tamaño original */
-  color: #fff;
+  color: var(--white);
   /* Cambia el color del texto al pasar el cursor */
 }
 
@@ -377,7 +386,7 @@ button.white {
   text-align: center;
   padding: 25px 15px;
   box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
-  border: 1px solid #cce7d0;
+  border: 1px solid var(--color-border);
   border-radius: 4px;
   margin: 15px 0;
 }
@@ -396,28 +405,28 @@ button.white {
   padding: 9px 8px 6px 8px;
   line-height: 1.5;
   border-radius: 4px;
-  color: #088178;
-  background-color: #fddde4;
+  color: var(--gold-600);
+  background-color: var(--ink-100);
 }
 
 #feature .fe-box:nth-child(2) h6 {
-  background-color: #cdebbc;
+  background-color: var(--ink-100);
 }
 
 #feature .fe-box:nth-child(3) h6 {
-  background-color: #d1e8f2;
+  background-color: var(--ink-100);
 }
 
 #feature .fe-box:nth-child(4) h6 {
-  background-color: #cdd4f8;
+  background-color: var(--ink-100);
 }
 
 #feature .fe-box:nth-child(5) h6 {
-  background-color: #f6dbf6;
+  background-color: var(--ink-100);
 }
 
 #feature .fe-box:nth-child(6) h6 {
-  background-color: #fff2e5;
+  background-color: var(--ink-100);
 }
 
 #product1 {
@@ -435,12 +444,12 @@ button.white {
   width: 23%;
   min-width: 250px;
   padding: 10px 12px;
-  border: 1px solid #cce7d0;
+  border: 1px solid var(--color-border);
   border-radius: 25px;
   cursor: pointer;
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
   margin: 15px 0;
-  transition: 0.2s ease;
+  transition: var(--dur-fast) var(--ease-out);
   position: relative;
 }
 
@@ -459,25 +468,25 @@ button.white {
 }
 
 #product1 .pro .des span {
-  color: #606063;
+  color: var(--ink-500);
   font-size: 12px;
 }
 
 #product1 .pro .des h5 {
   padding-top: 7px;
-  color: #1a1a1a;
+  color: var(--ink-900);
   font-size: 14px;
 }
 
 #product1 .pro .des i {
   font-size: 12px;
-  color: rgba(243, 181, 25);
+  color: var(--gold-400);
 }
 
 #product1 .pro .des h4 {
   padding-top: 7px;
   font-size: 15px;
-  color: #088178;
+  color: var(--gold-600);
 }
 
 #product1 .pro .cart {
@@ -485,10 +494,10 @@ button.white {
   height: 40px;
   line-height: 40px;
   border-radius: 50px;
-  background-color: #e8f6ea;
+  background-color: var(--ink-100);
   font-weight: 500;
-  color: #088178;
-  border: 1px solid #cce7d0;
+  color: var(--gold-600);
+  border: 1px solid var(--color-border);
   position: absolute;
   bottom: 20px;
   right: 10px;
@@ -510,24 +519,24 @@ button.white {
 }
 
 #banner h4 {
-  color: #fff;
+  color: var(--white);
   font-size: 16px;
 }
 
 #banner h2 {
-  color: #fff;
+  color: var(--white);
   font-size: 30px;
   padding: 10px 0;
 }
 
 #banner h2 span {
-  color: #ef3636;
+  color: var(--destructive);
 
 }
 
 #banner button:hover {
-  background: #088178;
-  color: #fff;
+  background: var(--gold-600);
+  color: var(--white);
 }
 
 #sm-banner {
@@ -551,7 +560,7 @@ button.white {
   justify-content: center;
   align-items: flex-start;
   background-image: url('img/banner/b17.webp');
-  background-color: #f4f4f4;
+  background-color: var(--ink-100);
   /* Fallback color mientras carga */
   background-size: cover;
   background-position: center center;
@@ -565,7 +574,7 @@ button.white {
   /* Toque visual moderno */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   /* Más profundidad */
-  color: #fff;
+  color: var(--white);
   /* Asegúrate de contraste si hay texto encima */
 }
 
@@ -576,27 +585,27 @@ button.white {
 }
 
 #sm-banner h4 {
-  color: #fff;
+  color: var(--white);
   font-size: 20px;
   font-weight: 300;
 }
 
 #sm-banner h2 {
-  color: #fff;
+  color: var(--white);
   font-size: 28px;
   font-weight: 800;
 }
 
 #sm-banner span {
-  color: #fff;
+  color: var(--white);
   font-size: 14px;
   font-weight: 500;
   padding-bottom: 15px;
 }
 
 #sm-banner .banner-box:hover button {
-  background-color: #088178;
-  box-shadow: 1px solid #088178;
+  background-color: var(--gold-600);
+  box-shadow: 1px solid var(--gold-600);
 }
 
 
@@ -675,7 +684,7 @@ button.white {
 
 /* 📝 Título principal del banner */
 .section-banner h2 {
-  color: #fff;
+  color: var(--white);
   /* 🎨 Color blanco para visibilidad */
   font-weight: 900;
   /* 🅱️ Negrita extrema */
@@ -685,7 +694,7 @@ button.white {
 
 /* 📝 Subtítulo del banner */
 .section-banner h3 {
-  color: hsl(117, 94%, 50%);
+  color: var(--gold-600);
   /* 🎨 Verde vibrante */
   font-weight: 800;
   /* 🔠 Negrita sólida */
@@ -703,24 +712,24 @@ button.white {
   background-image: url("img/banner/b14.webp");
   background-repeat: no-repeat;
   background-position: 20% 30%;
-  background-color: #041e42;
+  background-color: var(--ink-900);
 }
 
 #newslatter h4 {
   font-size: 22px;
   font-weight: 700;
-  color: #fff;
+  color: var(--white);
 
 }
 
 #newslatter p {
   font-size: 14px;
   font-weight: 600;
-  color: #818ea0;
+  color: var(--ink-500);
 }
 
 #newslatter p span {
-  color: #ffbd27;
+  color: var(--gold-400);
 }
 
 #newslatter .form {
@@ -744,8 +753,8 @@ button.white {
 }
 
 #newslatter button {
-  background-color: #088178;
-  color: #fff;
+  background-color: var(--gold-600);
+  color: var(--white);
   white-space: nowrap;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -783,7 +792,7 @@ footer p {
 footer a {
   font-size: 13px;
   text-decoration: none;
-  color: #222;
+  color: var(--ink-900);
   margin-bottom: 10px;
 }
 
@@ -792,13 +801,13 @@ footer .follow {
 }
 
 footer .follow i {
-  color: #465b52;
+  color: var(--ink-700);
   padding-right: 4px;
   cursor: pointer;
 }
 
 footer .install .row img {
-  border: 2px solid #088178;
+  border: 2px solid var(--gold-600);
   border-radius: 6px;
 }
 
@@ -808,7 +817,7 @@ footer .install img {
 
 footer .follow i:hover,
 footer a:hover {
-  color: #088178;
+  color: var(--gold-600);
 }
 
 footer .copyright {
@@ -859,7 +868,7 @@ footer .copyright {
 #page-header h2 {
   font-size: 2.5rem;
   margin: 0;
-  color: #fff;
+  color: var(--white);
   font-size: 700;
 }
 
@@ -879,10 +888,10 @@ footer .copyright {
 
 #pagination a {
   text-decoration: none;
-  background-color: #088178;
+  background-color: var(--gold-600);
   padding: 15px 20px;
   border-radius: 4px;
-  color: #fff;
+  color: var(--white);
   font-weight: 600;
 
 }
@@ -955,8 +964,8 @@ footer .copyright {
 }
 
 #prodetails .simgle-pro-details button {
-  background: #088178;
-  color: #fff;
+  background: var(--gold-600);
+  color: var(--white);
   cursor: pointer;
 
 }
@@ -1013,28 +1022,28 @@ footer .copyright {
 #blog .blog-details a {
   text-decoration: none;
   font-size: 11px;
-  color: #000;
+  color: var(--ink-950);
   font-weight: 700;
   position: relative;
-  transition: 0.3s;
+  transition: var(--dur-base) var(--ease-out);
 }
 
 #blog .blog-details a::after {
   content: "";
   width: 50px;
   height: 1px;
-  background-color: #000;
+  background-color: var(--ink-950);
   position: absolute;
   top: 4px;
   right: -60px;
 }
 
 #blog .blog-details a:hover {
-  color: #088178;
+  color: var(--gold-600);
 }
 
 #blog .blog-details a:hover::after {
-  background-color: #088178;
+  background-color: var(--gold-600);
 }
 
 #blog .blog-box h1 {
@@ -1043,7 +1052,7 @@ footer .copyright {
   left: 0;
   font-size: 70px;
   font-weight: 700;
-  color: #c9cbce;
+  color: var(--ink-300);
   z-index: -9;
 }
 
@@ -1218,7 +1227,7 @@ footer .copyright {
   justify-content: space-around;
   margin: 30px;
   padding: 80px;
-  border: 1px solid #e1e1e1;
+  border: 1px solid var(--color-border);
 }
 
 #form-details form {
@@ -1234,12 +1243,12 @@ footer .copyright {
   padding: 12px 15px;
   outline: none;
   margin-bottom: 20px;
-  border: 1px solid #e1e1e1;
+  border: 1px solid var(--color-border);
 }
 
 #form-details form button {
-  background-color: #088178;
-  color: #fff;
+  background-color: var(--gold-600);
+  color: var(--white);
 }
 
 #form-details .people div {
@@ -1266,7 +1275,7 @@ footer .copyright {
   display: block;
   font-size: 16px;
   font-weight: 600;
-  color: #000;
+  color: var(--ink-950);
 }
 
 
@@ -1332,7 +1341,7 @@ footer .copyright {
 
 #cart table img:hover {
   transform: scale(1.1);
-  transition: 0.3s ease-in-out;
+  transition: var(--dur-base) var(--ease-out)-in-out;
 }
 
 
@@ -1367,7 +1376,7 @@ footer .copyright {
 }
 
 #cart table thead {
-  border: 1px solid #e2e9e1;
+  border: 1px solid var(--color-border);
   border-left: none;
   border-right: none;
 }
@@ -1411,13 +1420,13 @@ footer .copyright {
   outline: none;
   width: 60%;
   margin-right: 10px;
-  border: 1px solid #e2e9e1;
+  border: 1px solid var(--color-border);
 }
 
 #coupun button,
 #subtotal button {
-  background-color: #088178;
-  color: #fff;
+  background-color: var(--gold-600);
+  color: var(--white);
   padding: 12px 20px;
 }
 
@@ -1426,7 +1435,7 @@ footer .copyright {
 #subtotal {
   width: 50%;
   margin-bottom: 30px;
-  border: 1px solid #e2e9e1;
+  border: 1px solid var(--color-border);
   padding: 30px;
 }
 
@@ -1438,7 +1447,7 @@ footer .copyright {
 
 #subtotal table td {
   width: 50%;
-  border: 1px solid #e2e9e1;
+  border: 1px solid var(--color-border);
   padding: 10px;
   font-size: 13px;
 }
@@ -1476,7 +1485,7 @@ footer .copyright {
   right: 20px;
   width: 60px;
   height: 60px;
-  background-color: #25d366;
+  background-color: var(--whatsapp);
   border-radius: 50%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -1518,15 +1527,28 @@ footer .copyright {
 
 
 
-/* Start Media Queries */
-/* Home page */
-/* =============================== */
-/* ✅ ESTILOS BASE (Desktop) */
-/* =============================== */
-/* =============================== */
-/* ✅ ESTILOS BASE (Desktop) */
-/* =============================== */
-/* Todo lo que no esté dentro de media queries aplica para pantallas grandes */
+/* ============================================================
+   MEDIA QUERIES
+   ------------------------------------------------------------
+   Breakpoints canónicos del proyecto (v2):
+
+      sm   ≤ 640px   teléfono
+      md   ≤ 768px   tablet portrait
+      lg   ≤ 1024px  tablet landscape / laptop chico
+      xl   ≤ 1280px  desktop
+      2xl  ≤ 1440px  desktop ancho
+
+   ESTADO POST-FASE-1 (refactor parcial):
+   - Bug nested @media inválido (líneas ~2141) EXTRAÍDO a top-level.
+   - Bloque duplicado idéntico de #auth-section @600px MERGEADO.
+   - Doble paréntesis `@media ((max-width: 477px))` FIX a sintaxis estándar.
+   - `!important` removido (7 ocurrencias).
+   DEUDA (Fase 2):
+   - Quedan ~13 breakpoints superpuestos (360/393/477/480/600/712/767/768/799/1024/1136/1279/1366).
+   - Migrar progresivamente cada @media block al breakpoint canónico
+     más cercano, verificando layout en cada paso.
+   ============================================================ */
+/* Estilos base (desktop) — todo lo que no esté en @media aplica a ≥1280px */
 
 /* =============================== */
 /* ✅ ESTILOS BASE (Desktop) */
@@ -1550,7 +1572,7 @@ footer .copyright {
   padding: 0.75rem;
   font-size: 1rem;
   border-radius: 5px 0 0 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border);
   min-width: 0;
 }
 
@@ -1559,8 +1581,8 @@ footer .copyright {
   font-size: 1rem;
   border-radius: 0 5px 5px 0;
   border: none;
-  background-color: #088178;
-  color: #fff;
+  background-color: var(--gold-600);
+  color: var(--white);
   cursor: pointer;
   white-space: nowrap;
 }
@@ -1711,8 +1733,8 @@ footer .copyright {
   }
 
   #sm-banner.banner-box.banner-box2 {
-    width: 100% !important;
-    height: 70vh !important;
+    width: 100%;
+    height: 70vh;
   }
 
   #banner3 {
@@ -1721,19 +1743,19 @@ footer .copyright {
 
   #banner3 .banner-box {
     width: 100%;
-    background-size: 80% !important;
+    background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
     height: 30vh;
   }
 
   #banner3 .banner-box2 {
-    background-size: cover !important;
+    background-size: cover;
   }
 
   #banner3 .banner-box3 {
-    background-size: contain !important;
-    background-position: center center !important;
+    background-size: contain;
+    background-position: center center;
     background-repeat: no-repeat;
     height: 30vh;
   }
@@ -1778,10 +1800,10 @@ footer .copyright {
     right: -300px;
     height: 100vh;
     width: 300px;
-    background-color: #E3E6F3;
+    background-color: var(--ink-50);
     box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
     padding: 80px 0 0 10px;
-    transition: 0.3s;
+    transition: var(--dur-base) var(--ease-out);
   }
 
   #navbar.active {
@@ -1798,7 +1820,7 @@ footer .copyright {
   }
 
   #mobile i {
-    color: #1a1a1a;
+    color: var(--ink-900);
     font-size: 25px;
     padding: 20px;
   }
@@ -1808,7 +1830,7 @@ footer .copyright {
     position: absolute;
     top: 30px;
     left: 30px;
-    color: #222;
+    color: var(--ink-900);
     font-size: 24px;
   }
 
@@ -2045,7 +2067,7 @@ footer .copyright {
 
 /* Single Product */
 
-@media ((max-width: 477px)) {
+@media (max-width: 477px) {
   #prodetails {
     display: flex;
     flex-direction: column;
@@ -2073,7 +2095,7 @@ footer .copyright {
 }
 
 /* @media Blog responsive */
-@media ((max-width: 477px)) {
+@media (max-width: 477px) {
   #blog {
     padding: 100px 20px 0 20px;
   }
@@ -2100,7 +2122,7 @@ footer .copyright {
 /* @media About responsive */
 
 
-@media ((max-width: 477px)) {
+@media (max-width: 477px) {
   #about-head {
 
     flex-direction: column;
@@ -2126,29 +2148,24 @@ footer .copyright {
     width: 100%;
 
   }
+}
 
+/* Contact form layout — extraído de @media nested inválido (era 2141-2162) */
+@media (max-width: 799px) {
+  #form-details {
+    padding: 40px;
+  }
 
+  #form-details .people {
+    margin: 0;
+    padding: 7px;
+    box-sizing: border-box;
+    font-family: var(--font-sans);
+  }
 
-  /* @media Contact page + the form and the faceses*/
-  @media (max-width: 799px) {
-    #form-details {
-      padding: 40px;
-    }
-
-    #form-details .people {
-      margin: 0;
-      padding: 7px;
-      box-sizing: border-box;
-      font-family: "Spartan", sans-serif;
-    }
-
-    #form-details form {
-      width: 50%;
-      justify-content: space-between;
-    }
-
-
-
+  #form-details form {
+    width: 50%;
+    justify-content: space-between;
   }
 }
 
@@ -2156,7 +2173,7 @@ footer .copyright {
 /* CONTACT PAGE */
 /* @media CONTAC PAGE*/
 
-@media ((max-width: 477px)) {
+@media (max-width: 477px) {
   #contact-details {
     flex-direction: column;
   }
@@ -2339,61 +2356,29 @@ footer .copyright {
 
 
 
-/* 🎯 Media Queries - Página de Autenticación */
-
-/* 📱 Para pantallas pequeñas (móviles) */
+/* 🎯 Media Queries — Página de Autenticación (móviles ≤600px)
+   Nota: había un bloque duplicado idéntico justo abajo, removido en consolidación.
+   Los valores que prevalecen son los más recientes (90→95% width, etc.). */
 @media (max-width: 600px) {
   #auth-wrapper {
     align-items: flex-end;
-    /* Baja la caja para no tapar la cara */
     padding-bottom: 60px;
-    /* Agrega espacio abajo */
-  }
-
-  #auth-section {
-    width: 90%;
-    padding: 25px 20px;
-    background: rgba(255, 255, 255, 0.65);
-    /* Más transparente aún */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  #auth-section h2 {
-    font-size: 1.5rem;
-  }
-
-  #login-btn {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-  }
-}
-
-/* 🎯 Media Queries - Página de Autenticación */
-
-/* 📱 Para pantallas pequeñas (móviles) */
-@media (max-width: 600px) {
-  #auth-wrapper {
-    align-items: flex-end;
-    /* Baja la caja para no tapar la cara */
-    padding-bottom: 60px;
-    /* Agrega espacio abajo */
   }
 
   #auth-section {
     width: 95%;
     padding: 30px 20px;
     background: rgba(255, 255, 255, 0.65);
-    /* Más transparente aún */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   }
 
   #auth-section h2 {
-    font-size: 1.6rem;
+    font-size: var(--t-2xl);
   }
 
   #login-btn {
     padding: 14px 28px;
-    font-size: 1rem;
+    font-size: var(--t-base);
   }
 }
 
@@ -2453,7 +2438,7 @@ footer .copyright {
     /* Flexbox para alineación */
     flex-wrap: wrap;
     /* Permite saltos de línea */
-    justify-content: center !important;
+    justify-content: center;
     /* Centrado horizontal forzado */
     align-items: center;
     /* Centrado vertical */

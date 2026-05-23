@@ -4,7 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online Juan Salvador's Shop</title>
+    <title>Producto — Juan Salvador's Shop</title>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Juan Salvador's Shop" />
+    <meta property="og:title" content="Producto — Juan Salvador's Shop" />
+    <meta property="og:description" content="Tienda online de ropa con ofertas, descuentos y colecciones nuevas para toda la familia." />
+    <meta property="og:image" content="https://jike777.github.io/juan-salvador-shop-v2/img/home/logo3.webp" />
+    <meta property="og:url" content="https://jike777.github.io/juan-salvador-shop-v2/product.html" />
+    <meta property="og:locale" content="es_CO" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Producto — Juan Salvador's Shop" />
+    <meta name="twitter:description" content="Tienda online de ropa con ofertas, descuentos y colecciones nuevas para toda la familia." />
+    <meta name="twitter:image" content="https://jike777.github.io/juan-salvador-shop-v2/img/home/logo3.webp" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://jike777.github.io/juan-salvador-shop-v2/product.html" />
+
     <link rel="icon" href="./img/favicon/favicon JS.webp" type="image/x-icon" />
     <link
       rel="stylesheet"
@@ -14,15 +32,38 @@
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     />
+    <link rel="stylesheet" href="tokens.css">
     <link rel="stylesheet" href="style.css" />
+  
+    <!-- Structured Data: Product (genérico; products inyectados vía JS — actualizar dinámicamente) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Producto Juan Salvador''s Shop",
+      "image": "https://jike777.github.io/juan-salvador-shop-v2/img/home/logo3.webp",
+      "description": "Productos de la colección Juan Salvador''s Shop",
+      "brand": {
+        "@type": "Brand",
+        "name": "Juan Salvador''s Shop"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "COP",
+        "lowPrice": "50000",
+        "highPrice": "500000",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
   </head>
 
   <body>
-    <section id="header">
+    <header id="header">
       <a href="index.html"
         ><img src="./img/home/logo.webp" class="logo" alt="logo pictuare"
       /></a>
-      <div>
+      <nav aria-label="Navegación principal">
         <ul id="navbar">
           <li><a href="index.html">Home</a></li>
           <li><a class="active" href="shop.html">Shop</a></li>
@@ -30,7 +71,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li id="lg-bag">
-            <a href="cart.html"><i class="far fa-shopping-cart"></i></a>
+            <a href="cart.html" aria-label="Carrito"><i class="far fa-shopping-cart" aria-hidden="true"></i></a>
           </li>
           <!-- 🔽 Nuevo menú desplegable de usuario -->
           <li id="user-menu" class="dropdown" hidden>
@@ -55,15 +96,16 @@
               </li>
             </ul>
           </li>
-          <a href="#" id="close"><i class="far fa-times"></i></a>
+          <a href="#" id="close" aria-label="Cerrar menú"><i class="far fa-times" aria-hidden="true"></i></a>
         </ul>
-      </div>
+      </nav>
       <div id="mobile">
-        <a href="cart.html"><i class="far fa-shopping-cart"></i></a>
-        <i id="bar" class="fas fa-outdent"></i>
+        <a href="cart.html" aria-label="Carrito"><i class="far fa-shopping-cart" aria-hidden="true"></i></a>
+        <button id="bar" class="fas fa-outdent" aria-label="Abrir menú" type="button"></button>
       </div>
-    </section>
+    </header>
 
+    <main>
     <section id="prodetails" class="section-p1">
       <!-- Primera img grande la lupa debe funcionar aqui-->
       <div class="single-pro-image">
@@ -122,6 +164,8 @@
         <button class="normal">Sign Up</button>
       </div>
     </section>
+    </main>
+    </main>
 
     <footer class="section-p1">
       <div class="col">
@@ -157,8 +201,8 @@
         <a href="#">Contacta con Nosotros</a>
       </div>
       <div class="col">
-        <h4>Mi cuanta</h4>
-        <a href="#">Iniciar Sección</a>
+        <h4>Mi cuenta</h4>
+        <a href="#">Iniciar Sesión</a>
         <a href="#">Ver Carrito</a>
         <a href="#">Mi Lista de Deseo</a>
         <a href="#">Rastrear mi Pedido</a>
