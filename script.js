@@ -207,12 +207,10 @@ document.addEventListener('DOMContentLoaded', () => {
         userMenu.style.display = 'block'; // ✅ Mostrar menú de usuario
       }
     } else {
-      console.warn('🚪 Usuario no autenticado, redirigiendo a auth.html...');
-
-      // ❌ Ocultar el menú de usuario si no hay sesión activa
+      // Usuario anónimo: home público, productos visibles. Auth se exige solo al hacer
+      // checkout/agregar al carrito (ver cart.js). Antes redirigíamos a auth.html lo que
+      // bloqueaba a todos los visitantes — patrón anti-UX para e-commerce.
       if (userMenu) userMenu.style.display = 'none';
-
-      window.location.href = 'auth.html'; // 🔄 Redirigir si no está autenticado
     }
   });
 
